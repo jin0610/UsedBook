@@ -1,11 +1,13 @@
 import React from "react";
+import PageMainBlock from "../components/PageMainBlock"
+import MyPageForm from '../components/MyPage/MyPageFrom';
 
-const MyPage = () => {
+const MyPage = () =>{
     return(
-        <div>
-            mypage
-        </div>
-    );
-};
+        <PageMainBlock>
+            <MyPageForm/>
+        </PageMainBlock>    
+    )
+}
 
 export default MyPage;

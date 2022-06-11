@@ -1,12 +1,12 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import PageMainBlock from "../components/PageMainBlock"
+import HomeForm from '../components/HomePage/HomeForm';
 
 const HomePage = () =>{
     return(
-        <div>
-            HomePage
-            <Link to="/mypage">mypage</Link>
-        </div>
+        <PageMainBlock>
+            <HomeForm/>
+        </PageMainBlock>    
     )
 }
 
