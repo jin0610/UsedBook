@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 const MyPageForm = () =>{
     return(
         <div>
-            mypage
+            <Link to={"/"}>homepage</Link>
         </div>
     )
 }
