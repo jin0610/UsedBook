@@ -1,21 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
 
-/* .homeform {
-    background-color: aqua;
+li {list-style: none;}
+
+.departmentList {
+    display: block;
+    margin: 10px;
+    padding:10px;
 }
 
-.searchboxblock {
-    margin : 0 auto;
-    background-color: yellow;
+.show-menu{
+    position: block;
+    /* top: 100px; */
+    transition: 1s;
 }
-
-.searchbox {
-    margin : 0 auto;
-    display : block;
-    width: 50%;
     
+.hide-menu{
+    position: block;
+    /* top: 0px; */
+    transition: 3s;
 }
 
-.material-symbols-outlined {
-    margin : 0 auto;
-} */
+.sidebar_menu {
+    padding:15px;
+}
