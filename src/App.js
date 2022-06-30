@@ -3,16 +3,31 @@ import { Route, Routes } from 'react-router';
 import HomePage from './pages/HomePage';
 import MyPage from './pages/MyPage';
 import './App.css';
+import QnAPage from './pages/QnAPage';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage/>}/>
-        <Route path='mypage' element={<MyPage/>}/>
+        <Route path='/'/>
+        <Route path='/join'/>
+        <Route path="/home" element={<HomePage/>}/>
+        <Route path='/bookinfo'/>
+        <Route path='/mypage' element={<MyPage/>}/>
+        <Route path='/qna' element={<QnAPage/>}/>
+        <Route path='/manager'/>
+
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
+
+// 1. 로그인 페이지 : /
+// 2. 회원가입 페이지 : /join
+// 3. 홈페이지(검색) : /home
+// 4. 책 정보 페이지 : /bookinfo
+// 5. 마이페이지 : /mypage
+// 6. QnA 페이지 : /qna
+// 7. 관리자 페이지 : /manager
