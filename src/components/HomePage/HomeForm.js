@@ -14,7 +14,6 @@ const HomeForm = () =>{
     }
     return(
         <div className="homeform">
-            <Link to="/mypage">mypage</Link>
             <div className="searchboxblock">
                 <input type="text"  className="searchbox"/>
                 <button className="material-symbols-outlined">search</button>
