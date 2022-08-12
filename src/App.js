@@ -2,6 +2,11 @@ import { BrowserRouter } from 'react-router-dom';
 import { Route, Routes } from 'react-router';
 import HomePage from './pages/HomePage';
 import MyPage from './pages/MyPage';
+
+import FindAccountPage from './pages/FindAccountPage';
+import MainPage from './pages/MainPage';
+import SignUpPage from './pages/SignUpPage';
+
 import './App.css';
 import QnAPage from './pages/QnAPage';
 
@@ -9,13 +14,15 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/'/>
-        <Route path='/join'/>
+
+        <Route path='/'element={<MainPage/>}/>
+        <Route path='/join' element={<SignUpPage/>}/>
         <Route path="/home" element={<HomePage/>}/>
         <Route path='/bookinfo'/>
         <Route path='/mypage' element={<MyPage/>}/>
-        <Route path='/qna' element={<QnAPage/>}/>
+        <Route path='/qna' />
         <Route path='/manager'/>
+        <Route path='/account' element={<FindAccountPage/>}/>
 
       </Routes>
     </BrowserRouter>
