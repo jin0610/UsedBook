@@ -1,0 +1,114 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.background__image{
+    height: 100%;
+    width: 100%;
+    background-size : cover;
+    background-position: center;
+    background: url("./Image/background__image.jpg") no-repeat;
+}
+/* 배경 그림 위에 어두운 dot 이미지 삽입 */
+.overLayout{
+    height: 100%;
+    width: 100%;
+    background: url("./Image/dot.png");
+    position: absolute;
+    top: 0;
+    z-index: 5;
+}
+.contents{
+    position: absolute;
+    top:40%;
+    left: 50%;
+    height: 300px;
+    width: 800px;
+    margin:-150px 0px 0px -400px;
+    z-index:10;
+    text-align:center;
+}
+.contents__name{
+    font-size: 90px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 40px;
+}
+.contents__details{
+    font-size: 27px;
+    font-weight: bold;
+    color: white;
+}
+
+.contents__login{ 
+    position:absolute; 
+    z-index: 10; 
+    width:100%; 
+    margin-top: 25px;
+}
+
+.login__inform {  
+    position: relative; 
+    width: 50%; 
+    height: 40px;
+    left:25%;
+    margin-top:40px;
+}
+.login__inform input{
+    width: 100%;
+    height: 100%;
+    padding: 5px 5px 5px 5px;
+    background-color:rgba(241, 241, 241, 0.267);
+    border: none;
+    font-size: 15px; color:white;
+}
+input::-webkit-input-placeholder{  /*user id, user pwd 글자색상*/
+    color:rgba(207, 207, 207, 0.733);
+}
+
+/*로그인버튼*/
+.login__btn{
+    margin-top:30px;
+    margin-bottom: 10px;
+} 
+.login__btn > button {
+    width: 25%; 
+    height:30px;
+    background-color:rgba(82, 80, 80, 0.74);
+    color: #fff;
+    font-size: 15px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/*forgot password*/
+.login__caption, .login__account{  
+    text-align: center;
+    margin-top: 10px;
+}
+.login__caption>a, .login__account>a{
+    font-size: 15px; 
+    color: rgb(211, 209, 209);
+}
+
+
+.sns{
+    position: absolute;
+    bottom:0%;
+    left: 50%;
+    height: 30px;
+    width: 600px;
+    margin:0px 0px 0px -300px;
+    z-index:10;
+    text-align:center;
+}
+.sns__list>li{
+    display: inline-block;
+    width: 10px;
+    height:30px;
+    margin-right: 10px;
+}
+.sns__list>li>a{
+    color: rgb(238, 237, 237);
+}
