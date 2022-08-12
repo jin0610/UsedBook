@@ -21,14 +21,14 @@ const MyPageForm = () =>{
     return(
         <div>
             <Link to={"/home"}>homepage</Link>
-            <div>
+            {/* <div>
                 <button>거래 기록</button>
                 <button>대출 기록</button>
                 <button>비밀번호 변경</button>
             </div>
             <DealRecord/>
             <BorrowRecord/>
-            <ChangePwd/>
+            <ChangePwd/> */}
             <ul className="tabs is-boxed" id="TabMenu">
                 <div className="TabMenu">
                     {menuArr.map((ele, index)=>{
@@ -38,6 +38,7 @@ const MyPageForm = () =>{
                         className={currentTab === index ? "submenu focused" : "submenu"}
                         onClick={()=> selectMenuHandler(index)}
                         >
+                            <button>{ele.name}</button>
                         {ele.name}
                         </li>
                         )
@@ -48,7 +49,7 @@ const MyPageForm = () =>{
             </ul>
             <div>
                         <h1>{menuArr[currentTab].content}</h1>
-                        {/* <p>바뀌는거 맞습니다..</p> */}
+                        
                     </div>
     
         </div>
