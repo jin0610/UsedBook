@@ -12,11 +12,10 @@ class Header extends Component{
                         <li><p href="#">book store</p></li>
                     </div>
                     <div className="header__list">
-                        <li><a href={'/home'}>home</a></li>
+                        <li><a href={() => false}>abcd</a></li>
                         <li><a href={() => false}>efgh</a></li>
-                        <li><a href={'/mypage'}>mypage</a></li>
-                        <li><a href={'/'}>logout</a></li>
-                        
+                        <li><a href={() => false}>ijkl</a></li>
+                        <li><a href={() => false}>mnop</a></li>
                     </div>
                 </ul>
             </header>

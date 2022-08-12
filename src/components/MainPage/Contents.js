@@ -22,7 +22,7 @@ class Contents extends Component{
                         <div class="login__inform">
                             <input type="password" autocomplete="off" placeholder="PASSWORD" required></input></div>
                         <div class="login__btn">
-                            <button type="submit"><Link to={'/home'}>LOGIN</Link></button>
+                            <button type="submit">LOGIN</button>
                         </div>
                     </form>
                     <div class="login__caption">

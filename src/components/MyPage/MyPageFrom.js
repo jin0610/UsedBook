@@ -20,25 +20,26 @@ const MyPageForm = () =>{
 
     return(
         <div>
-            {/* <div>
+            <Link to={"/home"}>homepage</Link>
+            <div>
                 <button>거래 기록</button>
                 <button>대출 기록</button>
                 <button>비밀번호 변경</button>
             </div>
             <DealRecord/>
             <BorrowRecord/>
-            <ChangePwd/> */}
+            <ChangePwd/>
             <ul className="tabs is-boxed" id="TabMenu">
                 <div className="TabMenu">
                     {menuArr.map((ele, index)=>{
                         return (
-                        <button
+                        <li
                         key={index}
                         className={currentTab === index ? "submenu focused" : "submenu"}
                         onClick={()=> selectMenuHandler(index)}
                         >
                         {ele.name}
-                        </button>
+                        </li>
                         )
                     })}
 
