@@ -1,40 +1,35 @@
-import { BrowserRouter } from 'react-router-dom';
-import { Route, Routes } from 'react-router';
-import HomePage from './pages/HomePage';
-import MyPage from './pages/MyPage';
-
-import FindAccountPage from './pages/FindAccountPage';
-import MainPage from './pages/MainPage';
-import SignUpPage from './pages/SignUpPage';
 
 import './App.css';
-import QnAPage from './pages/QnAPage';
+import { Component } from 'react';
+import Main from './main_component';
+import SignUp from '../src/signup/SignUp'
+import Header from './header/Header'
+import BookList from './book__list/book__list'
+import Login from './login/Login';
+import Find__PWD from './findAccount/findPWD';
+import Find__ID from './findAccount/findID';
+import BookDetail from './book_detail/book__detail';
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-
-        <Route path='/'element={<MainPage/>}/>
-        <Route path='/join' element={<SignUpPage/>}/>
-        <Route path="/home" element={<HomePage/>}/>
-        <Route path='/bookinfo'/>
-        <Route path='/mypage' element={<MyPage/>}/>
-        <Route path='/qna' element={<QnAPage/>} />
-        <Route path='/manager'/>
-        <Route path='/account' element={<FindAccountPage/>}/>
-
-      </Routes>
-    </BrowserRouter>
-  );
+class App extends Component{
+  render() {
+    return (
+      <div className='App'>
+        <Header></Header>
+        <BookDetail></BookDetail>
+        
+      </div>
+    )
+  }
 }
+
 
 export default App;
 
-// 1. 로그인 페이지 : /
-// 2. 회원가입 페이지 : /join
-// 3. 홈페이지(검색) : /home
-// 4. 책 정보 페이지 : /bookinfo
-// 5. 마이페이지 : /mypage
-// 6. QnA 페이지 : /qna
-// 7. 관리자 페이지 : /manager
+/* 
+완전히 완료한 페이지 : header, login, find__id, find__pwd
+안에 글씨 내용만 바꾸면 되는 페이지: main, book__list
+현재 수정중인 페이지 : 책정보 페이지 css
+구현하지 못한 페이지 : 회원가입, qna 신청목차, 예약&구매창, 관리자페이지, 내정보페이지
+(qna신청 양식은 main페이지 하단에 있는 양식 그대로 사용할지 상의해보기!)
+
+*/
