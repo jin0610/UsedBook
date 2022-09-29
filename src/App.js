@@ -1,25 +1,28 @@
+import React from "react";
+import { Route, Routes } from "react-router";
+import { BrowserRouter } from "react-router-dom";
+import BookInfoPage from "./Pages/BookInfoPage";
+import BookListPage from "./Pages/BookListPage";
+import FindInfoPage from "./Pages/FindInfoPage";
+import LoginPage from "./Pages/LoginPage";
+import MainPage from "./Pages/MainPage";
+import MyPage from "./Pages/MyPage";
+import SignUpPage from "./Pages/SignUpPage";
 
-import './App.css';
-import { Component } from 'react';
-import Main from './main_component';
-import SignUp from '../src/signup/SignUp'
-import Header from './header/Header'
-import BookList from './book__list/book__list'
-import Login from './login/Login';
-import Find__PWD from './findAccount/findPWD';
-import Find__ID from './findAccount/findID';
-import BookDetail from './book_detail/book__detail';
-
-class App extends Component{
-  render() {
-    return (
-      <div className='App'>
-        <Header></Header>
-        <BookDetail></BookDetail>
-        
-      </div>
-    )
-  }
+function App(){
+  return(
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage/>}/>
+        <Route path="/login" element={<LoginPage/>}/>
+        <Route path="/signup" element={<SignUpPage/>}/>
+        <Route path="/find" element={<FindInfoPage/>}/>
+        <Route path="/mypage" element={<MyPage/>}/>
+        <Route path="/booklist" element={<BookListPage/>}/>
+        <Route path="/bookInfo" element={<BookInfoPage/>}/>
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 
