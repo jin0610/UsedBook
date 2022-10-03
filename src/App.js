@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
-import BookInfoPage from "./Pages/BookInfoPage";
 import BookListPage from "./Pages/BookListPage";
 import FindInfoPage from "./Pages/FindInfoPage";
 import LoginPage from "./Pages/LoginPage";
@@ -19,7 +18,6 @@ function App(){
         <Route path="/find" element={<FindInfoPage/>}/>
         <Route path="/mypage" element={<MyPage/>}/>
         <Route path="/booklist" element={<BookListPage/>}/>
-        <Route path="/bookInfo" element={<BookInfoPage/>}/>
       </Routes>
     </BrowserRouter>
   )

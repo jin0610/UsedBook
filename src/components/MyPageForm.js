@@ -1,7 +1,9 @@
 const MyPageForm = () =>{
     return(
-        <section>
-            
+        <section className="container">
+            <div>
+
+            </div>
         </section>
     )
 }

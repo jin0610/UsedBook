@@ -1,7 +1,8 @@
+import BookInfoModal from "./BookInfoModal"
 import "./Styles.css"
 
 const BookListItem = (props) =>{
-    const {bookname, bookprice, sale} = props
+    const {bookname, bookprice, sale, bookIndex} = props
     return(
         <div class="col mb-5">
             <div class="card h-100">
@@ -16,7 +17,8 @@ const BookListItem = (props) =>{
                 </div>
 
                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/bookInfo">+ more</a></div>
+                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#bookinfo" data-bs-toggle="modal">+ more</a></div>
+                    <BookInfoModal bookIndex={`${bookIndex}`}/>
                 </div>
             </div>
         </div>

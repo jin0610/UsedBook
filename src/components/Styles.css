@@ -3776,6 +3776,7 @@ textarea.form-control-lg {
   white-space: nowrap;
   background-color: transparent;
   border: 0;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 .dropdown-item:hover, .dropdown-item:focus {
   color: #1e2125;
@@ -5480,12 +5481,14 @@ textarea.form-control-lg {
 }
 
 .modal {
+  display: none;
   position: fixed;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
   z-index: 1055;
-  display: none;
-  width: 80%;
+  width: 100%;
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
@@ -5493,18 +5496,41 @@ textarea.form-control-lg {
 }
 
 .modal-dialog {
-  /* position: relative;
+  position: relative;
   width: auto;
   margin: 0.5rem;
-  pointer-events: none; */
+  pointer-events: none;
   display: inline-block;
   vertical-align: middle;
+
+}
+
+.filebox {
+  position: relative;
+  overflow: hidden;
+}
+
+.filebox input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
 }
 
 .modal.fade .modal-dialog {
   transition: transform 0.3s ease-out;
-  transform: translate(0, -50px);
+  transform: translate(0px, -50px);
 }
+
 @media (prefers-reduced-motion: reduce) {
   .modal.fade .modal-dialog {
     transition: none;
@@ -5568,11 +5594,12 @@ textarea.form-control-lg {
   flex-shrink: 0;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1rem;
+  /* padding: 1rem 1rem; */
   border-bottom: 1px solid #dee2e6;
   border-top-left-radius: calc(0.3rem - 1px);
   border-top-right-radius: calc(0.3rem - 1px);
 }
+
 .modal-header .btn-close {
   padding: 0.5rem 0.5rem;
   margin: -0.5rem -0.5rem -0.5rem auto;
@@ -11338,6 +11365,13 @@ p {
   font-weight: 700;
 }
 
+.btn-m {
+  padding: 0.5rem 3rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
 .btn-social {
   height: 2.5rem;
   width: 2.5rem;
@@ -11505,34 +11539,36 @@ div.masthead .masthead-heading {
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.portfolio-modal .modal-dialog {
+.book-modal .modal-dialog {
   margin: 1rem;
   max-width: 100vw;
+  
 }
-.portfolio-modal .modal-content {
+.book-modal .modal-content {
   padding-top: 6rem;
   padding-bottom: 6rem;
   text-align: center;
 }
-.portfolio-modal .modal-content h2, .portfolio-modal .modal-content .h2 {
-  font-size: 3rem;
+.book-modal .modal-content h2, .book-modal .modal-content .h2 {
+  font-size: 2.5rem;
   line-height: 3rem;
 }
-.portfolio-modal .modal-content p.item-intro {
+.book-modal .modal-content p.item-intro {
   font-style: italic;
   margin-bottom: 2rem;
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-.portfolio-modal .modal-content p {
+.book-modal .modal-content p {
   margin-bottom: 2rem;
 }
-.portfolio-modal .modal-content ul.list-inline {
+.book-modal .modal-content ul.list-inline {
   margin-bottom: 2rem;
 }
-.portfolio-modal .modal-content img {
+.book-modal .modal-content img, .book-modal .modal-content #bookImg{
   margin-bottom: 2rem;
 }
-.portfolio-modal .close-modal {
+
+.close-modal {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
@@ -11541,7 +11577,8 @@ div.masthead .masthead-heading {
   cursor: pointer;
   background-color: transparent;
 }
-.portfolio-modal .close-modal:hover {
+
+.book-modal .close-modal:hover {
   opacity: 0.3;
 }
 
