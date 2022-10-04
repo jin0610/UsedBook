@@ -7,6 +7,10 @@ import LoginPage from "./Pages/LoginPage";
 import MainPage from "./Pages/MainPage";
 import MyPage from "./Pages/MyPage";
 import SignUpPage from "./Pages/SignUpPage";
+import QuetionListPage from "./Pages/QuetionListPage";
+import QuetionView from "./Components/QuetionView";
+import QuetionInsertPage from "./Pages/QuetionInsertPage";
+import QuetionEditPage from "./Pages/QuetionEditPage";
 
 function App(){
   return(
@@ -18,6 +22,10 @@ function App(){
         <Route path="/find" element={<FindInfoPage/>}/>
         <Route path="/mypage" element={<MyPage/>}/>
         <Route path="/booklist" element={<BookListPage/>}/>
+        <Route path="/qna" element={<QuetionListPage/>}/>
+        <Route path="/qnaview" element={<QuetionView/>}/>
+        <Route path="/qnainsert" element={<QuetionInsertPage/>}/>
+        <Route path="/qnaedit" element={<QuetionEditPage/>}/>
       </Routes>
     </BrowserRouter>
   )

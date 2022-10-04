@@ -13,7 +13,7 @@ const MainNav = () =>{
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="/booklist">Books</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">FAQs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/qna">FAQs</a></li>
                     </ul>
                 </div>
             </div>

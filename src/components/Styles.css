@@ -11689,3 +11689,208 @@ section#search form#SearchForm :-ms-input-placeholder {
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+
+/*qna page css*/
+
+/*질문목록*/
+.board_list{
+  width: 100%;
+  border-top: 1.5px solid #464646;
+}
+.board_list > div{
+  border-bottom: 1px solid #ddd;
+  font-size: 0;
+}
+.board_list >div.top{
+  border-bottom: 1px solid #999;
+}
+.board_list >div:last-child{
+  border-bottom: 1.5px solid #464646;
+}
+.board_list>div>div{
+  display: inline-block;
+  font-size: 13px;
+  text-align: center;
+  padding: 25px 0;
+}
+.board_list>div.top>div{
+  font-weight: 600;
+}
+.board_list .num{
+  width: 10%;
+}
+.board_list .title{
+  width: 65%;
+  text-align: left;
+}
+.board_list .top .title{
+  text-align: center;
+}
+.board_list .writer{
+  width: 10%;
+}
+.board_list .date{
+  width: 15%;
+}
+/*하단 페이지 이동*/
+.board_page{
+  margin-top: 30px;
+  text-align: center;
+}
+.board_page a{
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  font-size: 0;
+  line-height: 100%;
+}
+.board_page a.bt{
+  color: #212529;
+  font-size: 18px;
+  padding-top: 10px;
+  letter-spacing: -1px;
+}
+.board_page a.num{
+  font-size: 15px;
+  padding-top:9px;
+  color: #212529;
+}
+.board_page a.num.on{
+  border-color: #000;
+  background: #000;
+  color: #fff;
+}
+
+
+/*등록버튼*/
+.bt_wrap {
+  margin-top: 70px;
+  text-align: center;
+  font-size: 0;
+}
+.bt_wrap .offset-1:first-child{
+  margin-left: 0;
+}
+.bt_wrap .on{
+  border-color: #212529;
+}
+
+/*qna view css*/
+.board_view{
+  width: 100%;
+  border-top: 1.5px solid #464646;
+  font-size: 13px;
+}
+.board_view .viewTitle{
+  padding: 20px;
+  border-bottom: 1.5px solid #ddd;
+  font-size: 18px;
+}
+.board_view .viewInfo{
+  padding: 15px;
+  border-bottom: 1px solid #999;
+  font-size: 0;
+}
+.board_view .viewInfo dl{
+  display: inline-block;
+  position: relative;
+  padding: 10px;
+  margin:0;
+}
+.board-view .viewInfo dl:first-child{
+  padding-left: 0;
+}
+.board_view .viewInfo dl::before{
+  content: "";
+    position: absolute;
+    top: 1px;
+    left: 0px;
+    display: block;
+    width: 1px;
+    height: 50px;
+    background: #ddd;
+}
+.board_view .viewInfo dl:first-child::before{
+  display: none;
+}
+.board_view .viewInfo dl dt, .board_view .viewInfo dl dd{
+  display: inline-block;
+  font-size: 15px;
+}
+.board_view .viewInfo dl dt{
+
+}
+.board_view .viewInfo dl dd{
+  margin-left: 10px;
+  color: #777;
+}
+.board_view .viewCont{
+  padding: 15px;
+  border-bottom: 1.5px solid #464646; 
+  font-size: 13px;
+  line-height: 160%;
+}
+
+/*qna insert css*/
+.board_write {
+  width: 100%;
+  font-size: 13px;
+  border-top: 1.5px solid #464646; 
+}
+
+.board_write .title,
+.board_write .info {
+    padding: 15px;
+}
+.board_write .title dl {
+  font-size: 0;
+}
+.board_write .writeInfo {
+  border-top: 1px dashed #ddd;
+  border-bottom: 1.5px solid #464646; 
+  font-size: 0;
+}
+
+.board_write .writeInfo dl {
+  display: inline-block;
+  width: 50%;
+  vertical-align: middle;
+}
+.board_write .writeTtitle dt,
+.board_write .writeTtitle dd,
+.board_write .writeInfo dt,
+.board_write .writeInfo dd {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 13px;
+}
+.board_write .writeTtitle dt,
+.board_write .writeInfo dt {
+  width: 100px;
+  padding-top: 15px;
+  padding-left: 20px;
+}
+.board_write .writeTtitle dd{
+  width: calc(100% - 100px);
+}
+.board_write .writeTtitle input[type="text"],
+.board_write .writeInfo input[type="text"],
+.board_write .writeInfo input[type="password"] {
+  padding: 10px 10px 0 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  width: 90%;
+}
+.board_write .writeCont {
+  border-bottom: 1.5px solid #464646; 
+}
+.board_write .writeCont textarea{
+  display: block;
+  width: 100%;
+  height: 300px;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 0;
+  resize: vertical;
+}
