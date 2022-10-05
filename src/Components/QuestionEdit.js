@@ -1,13 +1,13 @@
 import "./Styles.css"
 
-const QuetionEdit = () =>{
+const QuestionEdit = () =>{
     return( 
         <>
             {/* 제목 및 search bar */}
             <section class="bg-dark py-5" id="search">
                 <div class="container px-4 px-lg-5 my-5">
                     <div class="text-center text-white mb-5">
-                        <h1 class="display-4 fw-bolder">Q & A 수정하기</h1>
+                        <h1 class="display-4 fw-bolder">Modify Question</h1>
                     </div> 
                 </div>
             </section>
@@ -53,4 +53,4 @@ const QuetionEdit = () =>{
     )
 }
 
-export default QuetionEdit
+export default QuestionEdit

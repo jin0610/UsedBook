@@ -7,10 +7,10 @@ import LoginPage from "./Pages/LoginPage";
 import MainPage from "./Pages/MainPage";
 import MyPage from "./Pages/MyPage";
 import SignUpPage from "./Pages/SignUpPage";
-import QuetionListPage from "./Pages/QuetionListPage";
-import QuetionView from "./Components/QuetionView";
-import QuetionInsertPage from "./Pages/QuetionInsertPage";
-import QuetionEditPage from "./Pages/QuetionEditPage";
+import QuestionListPage from "./Pages/QuestionListPage";
+import QuestionView from "./Components/QuestionView";
+import QuestionInsertPage from "./Pages/QuestionInsertPage";
+import QuestionEditPage from "./Pages/QuestionEditPage";
 
 function App(){
   return(
@@ -22,10 +22,10 @@ function App(){
         <Route path="/find" element={<FindInfoPage/>}/>
         <Route path="/mypage" element={<MyPage/>}/>
         <Route path="/booklist" element={<BookListPage/>}/>
-        <Route path="/qna" element={<QuetionListPage/>}/>
-        <Route path="/qnaview" element={<QuetionView/>}/>
-        <Route path="/qnainsert" element={<QuetionInsertPage/>}/>
-        <Route path="/qnaedit" element={<QuetionEditPage/>}/>
+        <Route path="/qna" element={<QuestionListPage/>}/>
+        <Route path="/qnaview" element={<QuestionView/>}/>
+        <Route path="/qnainsert" element={<QuestionInsertPage/>}/>
+        <Route path="/qnaedit" element={<QuestionEditPage/>}/>
       </Routes>
     </BrowserRouter>
   )

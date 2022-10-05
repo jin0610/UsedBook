@@ -1,15 +1,15 @@
-import QuetionEdit from "../Components/QuetionEdit"
+import QuestionEdit from "../Components/QuestionEdit"
 import Navigation from "../Components/Navigation"
 import Footer from "../Components/Footer"
 
-const QuetionEditPage = () =>{
+const QuestionEditPage = () =>{
     return(
         <div>
             <Navigation/>
-            <QuetionEdit/>
+            <QuestionEdit/>
             <Footer/>
         </div>
     )
 }
 
-export default QuetionEditPage
+export default QuestionEditPage

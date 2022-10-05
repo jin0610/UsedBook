@@ -1,13 +1,13 @@
 import "./Styles.css"
 
-const QuetionInsert = () =>{
+const QuestionInsert = () =>{
     return( 
         <>
             {/* 제목 및 search bar */}
             <section class="bg-dark py-5" id="search">
                 <div class="container px-4 px-lg-5 my-5">
                     <div class="text-center text-white mb-5">
-                        <h1 class="display-4 fw-bolder">Q & A 작성하기</h1>
+                        <h1 class="display-4 fw-bolder">Write a Question</h1>
                     </div> 
                 </div>
             </section>
@@ -51,4 +51,4 @@ const QuetionInsert = () =>{
     )
 }
 
-export default QuetionInsert
+export default QuestionInsert

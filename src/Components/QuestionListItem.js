@@ -1,7 +1,6 @@
 import "./Styles.css"
-import QuetionView from "./QuetionView"
 
-const QuetionListItem = (props) =>{
+const QuestionListItem = (props) =>{
     const {qnanum, qnatitle, qnawriter, qnadate} = props
     return(
         <>
@@ -16,4 +15,4 @@ const QuetionListItem = (props) =>{
     
 }
 
-export default QuetionListItem
+export default QuestionListItem

@@ -1,15 +1,15 @@
-import QuetionView from "../Components/QuetionView"
+import QuestionInsert from "../Components/QuestionInsert"
 import Navigation from "../Components/Navigation"
 import Footer from "../Components/Footer"
 
-const QuetionInsertPage = () =>{
+const QuestionInsertPage = () =>{
     return(
         <div>
             <Navigation/>
-            <QuetionView/>
+            <QuestionInsert/>
             <Footer/>
         </div>
     )
 }
 
-export default QuetionInsertPage
+export default QuestionInsertPage

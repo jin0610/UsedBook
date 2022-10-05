@@ -1,7 +1,7 @@
-import QuetionListItem from "./QuetionListItem"
+import QuestionListItem from "./QuestionListItem"
 import "./Styles.css"
 
-const QuetionListForm = () =>{
+const QuestionListForm = () =>{
     return( 
         <>
             {/* 제목 및 search bar */}
@@ -35,19 +35,19 @@ const QuetionListForm = () =>{
                             <div class="date">작성일</div>
                         </div>
                         <div>
-                        <QuetionListItem qnanum="5" qnatitle="제목" qnawriter="신서영" qnadate="2022.10.04"/>
+                        <QuestionListItem qnanum="5" qnatitle="제목" qnawriter="신서영" qnadate="2022.10.04"/>
                         </div>
                         <div>
-                        <QuetionListItem qnanum="4" qnatitle="제목" qnawriter="신서영" qnadate="2022.10.03"/>
+                        <QuestionListItem qnanum="4" qnatitle="제목" qnawriter="신서영" qnadate="2022.10.03"/>
                         </div>
                         <div>
-                        <QuetionListItem qnanum="3" qnatitle="제목" qnawriter="신서영" qnadate="2022.10.02"/>
+                        <QuestionListItem qnanum="3" qnatitle="제목" qnawriter="신서영" qnadate="2022.10.02"/>
                         </div>
                         <div>
-                        <QuetionListItem qnanum="2" qnatitle="제목" qnawriter="신서영" qnadate="2022.10.01"/>
+                        <QuestionListItem qnanum="2" qnatitle="제목" qnawriter="신서영" qnadate="2022.10.01"/>
                         </div>
                         <div>
-                        <QuetionListItem qnanum="1" qnatitle="제목" qnawriter="신서영" qnadate="2022.09.04"/>
+                        <QuestionListItem qnanum="1" qnatitle="제목" qnawriter="신서영" qnadate="2022.09.04"/>
                         </div>
                     </div>
 
@@ -73,7 +73,7 @@ const QuetionListForm = () =>{
     )
 }
 
-export default QuetionListForm
+export default QuestionListForm
 
 /* 버튼 두개일 때
                     <div class = "bt_wrap">

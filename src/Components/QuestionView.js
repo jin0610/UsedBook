@@ -1,13 +1,13 @@
 import "./Styles.css"
 
-const QuetionView = () =>{
+const QuestionView = () =>{
     return( 
         <>
             {/* 제목 및 search bar */}
             <section class="bg-dark py-5" id="search">
                 <div class="container px-4 px-lg-5 my-5">
                     <div class="text-center text-white mb-5">
-                        <h1 class="display-4 fw-bolder">Q & A 보기</h1>
+                        <h1 class="display-4 fw-bolder">View Question</h1>
                     </div> 
                 </div>
             </section>
@@ -54,7 +54,7 @@ const QuetionView = () =>{
     )
 }
 
-export default QuetionView
+export default QuestionView
 
 /* 버튼 두개일 때
                     <div class = "bt_wrap">
