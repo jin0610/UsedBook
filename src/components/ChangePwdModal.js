@@ -10,26 +10,30 @@ const ChangePwdModal = () =>{
                     <img src="assets/img/close-icon.svg" alt="Close modal"/>
                     </div>
                     <div class="container">
-                        <form class="row justify-content-center">
-                            <div class="col-lg-5 text-center">
-                                <h2>책 등록</h2>
-                                <div className="row justify-content-center mb-4 mt-5">
-                                    
-                                    <div className="col-8">
-                                        <div className="form-group mb-4">
-                                            <input className="form-control"type="password" id="oldpwd" placeholder="old password"/>
+                        {/* <div class="row justify-content-center align-items-center">/ */}
+                            <form class="text-center">
+                                <div class="row justify-content-center mb-4 mt-5">
+                                    <div class="col-7">
+                                        <div class="form-group">
+                                            <input class="form-control" id="oldPwd" type="password" placeholder="old password"/>
+                                            <div class="invalid-feedback">Password is not valid.</div>
                                         </div>
-                                        <div className="form-group mb-4">
-                                            <input className="form-control"type="password" id="newpwd" placeholder="new password"/>
+                                        <div class="form-group">
+                                            <input class="form-control" id="newPwd" type="password" placeholder="new password"/>
+                                            <div class="invalid-feedback">A new password is required.</div>
+                                            <div class="invalid-feedback">Password is not valid.</div>
                                         </div>
-                                        <div className="form-group mb-4">
-                                            <input className="form-control"type="password" id="newpwdcheck" placeholder="new password check"/>
+                                        <div class="form-group">
+                                            <input class="form-control" id="newPwdCheck" type="password" placeholder="new password"/>
+                                            <div class="invalid-feedback">A new password is required.</div>
+                                            <div class="invalid-feedback">Password is not valid.</div>
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary btn-m text-uppercase" type="button">등록</button> 
-                            </div>
-                        </form>
+
+                                <div class="text-center"><button class="btn btn-primary btn-ㅡ text-uppercase mb-4" id="submitButton" type="submit">비밀번호 변경</button></div> 
+                            </form>
+                        {/* </div> */}
                     </div>
                 </div>
             </div>
