@@ -12,11 +12,11 @@ const FindInfoForm = () =>{
                     <div class="row justify-content-center mb-4 mt-5">
                         <div class="col-7">
                             <div class="form-group">
-                                <input class="form-control" id="std_num" type="text" placeholder="STUDENT NUMBER"/>
+                                <input class="form-control mg" id="std_num" type="text" placeholder="STUDENT NUMBER"/>
                                 <div class="invalid-feedback">A student number is required.</div>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="email" type="email" placeholder="EMAIL"/>
+                                <input class="form-control mg" id="email" type="email" placeholder="EMAIL"/>
                                 <div class="invalid-feedback">An email is required.</div>
                             </div>
 						</div>
