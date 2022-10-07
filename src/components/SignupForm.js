@@ -1,6 +1,7 @@
 import "./Styles.css"
 
-const SignupForm = () =>{
+const SignupForm = (props) =>{
+    const {form, onChange, onSubmit} = props
     return(
 		<section class="page-section" id="auth">
             <div class="container text-center">
@@ -8,11 +9,11 @@ const SignupForm = () =>{
                     <h2 class="section-heading text-uppercase">signup</h2>
                 </div>
 
-                <form id="AuthForm" class="text-center">
+                <form id="AuthForm" class="text-center" onSubmit={onSubmit}>
                     <div class="row justify-content-center mb-4 mt-5">
                         <div class="col-7">
                             <div class="form-group">
-                                <input class="form-control" id="std_num" type="text" placeholder="STUDENT NUMBER"/>
+                                <input class="form-control" id="std_num" type="text" placeholder="STUDENT NUMBER" name="std_num" />
                                 <div class="invalid-feedback">A student number is required.</div>
                             </div>
                             <div class="form-group">
@@ -20,7 +21,7 @@ const SignupForm = () =>{
                                 <div class="invalid-feedback">A password is required.</div>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="password" type="password" placeholder="PASSWORD CHECK"/>
+                                <input class="form-control" id="password CHECK" type="password" placeholder="PASSWORD CHECK"/>
                                 <div class="invalid-feedback">A password is required.</div>
                                 <div class="invalid-feedback">Password is not correct.</div>
                             </div>

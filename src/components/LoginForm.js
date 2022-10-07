@@ -1,22 +1,23 @@
 import "./Styles.css"
 
-const LoginForm = () =>{
+const LoginForm = (props) =>{
+    const {form, onChange, onSubmit} = props
     return(
-		<section class="page-section" id="auth">
-            <div class="container text-center">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">login</h2>
+		<section className="page-section" id="auth">
+            <div className="container text-center">
+                <div className="text-center">
+                    <h2 className="section-heading text-uppercase">login</h2>
                 </div>
 
-                <form id="AuthForm" class="text-center">
-                    <div class="row justify-content-center mb-4 mt-5">
-                        <div class="col-7">
-                            <div class="form-group">
-                                <input class="form-control" id="ID" type="text" placeholder="ID"/>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">An ID is required.</div>
+                <form id="AuthForm" className="text-center" onSubmit={onSubmit}>
+                    <div className="row justify-content-center mb-4 mt-5">
+                        <div className="col-7">
+                            <div className="form-group">
+                                <input className="form-control" name="std_num" id="std_num" type="text" placeholder="STUDENT NUMBER" onChange={onChange} value={form.std_num}/>
+                                <div className="invalid-feedback" data-sb-feedback="name:required">An ID is required.</div>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="password" type="password" placeholder="PASSWORD"/>
+                                <input className="form-control" id="password" name="password"type="password" placeholder="PASSWORD" onChange={onChange} value={form.password}/>
                                 <div class="invalid-feedback">A password is required.</div>
                                 <div class="invalid-feedback">Password is not valid.</div>
                             </div>

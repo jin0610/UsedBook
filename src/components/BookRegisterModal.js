@@ -15,7 +15,8 @@ const BookRegisterModal = () =>{
                     <div class="container">
                         <form class="row justify-content-center">
                             <div class="col-4 filebox">
-                                <img class="img-fluid  d-block  mx-auto" src="https://dummyimage.com/480x700/dee2e6/6c757d.jpg" alt="..." />
+                                {/* <img class="img-fluid  d-block  mx-auto" src="https://dummyimage.com/480x700/dee2e6/6c757d.jpg" alt="..." /> */}
+                                <img class="img-thumbnail  d-block  mx-2" src="assets/img/img-upload.png" alt="..." />
                                 <input type="file" class="form-control" id="bookImg"/>
                             </div>
 

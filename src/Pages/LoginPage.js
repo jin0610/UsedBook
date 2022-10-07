@@ -1,12 +1,12 @@
 import Footer from "../Components/Footer"
-import LoginForm from "../Components/LoginForm"
 import MainNav from "../Components/MainNav"
+import LoginContainer from "../Containers/LoginContainer"
 
 const LoginPage = () =>{
     return(
         <div>
             <MainNav/>
-            <LoginForm/>
+            <LoginContainer/>
             <Footer/>
         </div>
     )
