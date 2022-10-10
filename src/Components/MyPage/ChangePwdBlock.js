@@ -3,9 +3,9 @@
 const ChangePwdBlock = () =>{
 
     return(
-        <div className="tab-pane fade" id="changepwdblock" role="tabpanel" aria-labelledby="changepwdblock-tab">
-            <div>
-            <form class=" row text-center justify-content-center">
+        <div className="tab-pane" id="changepwdblock" role="tabpanel" aria-labelledby="changepwdblock-tab">
+            <div className="py-5">
+            <form class="row text-center justify-content-center">
                 <div class="col-8">
                     <div class="form-group mb-3">
                         <input class="form-control" id="oldPwd" type="password" placeholder="old password"/>

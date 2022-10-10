@@ -15,20 +15,20 @@ const MyPageForm = () =>{
                         <h4 class="">00000000</h4>
                     </div>
                     <div className="bg-light">
-                    <ul class="nav nav-tabs flex-column" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="buylistblock-tab" data-bs-toggle="tab" data-bs-target="#buylistblock" type="button" role="tab" aria-controls="buylistblock" aria-selected="true">구매 목록</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="rentallistblock-tab" data-bs-toggle="tab" data-bs-target="#rentallistblock" type="button" role="tab" aria-controls="rentallistblock" aria-selected="false">대여 목록</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="salelistblock-tab" data-bs-toggle="tab" data-bs-target="#salelistblock" type="button" role="tab" aria-controls="salelistblock" aria-selected="false">판매 목록</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="changepwdblock-tab" data-bs-toggle="tab" data-bs-target="#changepwdblock" type="button" role="tab" aria-controls="changepwdblock" aria-selected="false">개인 정보 수정</a>
-                        </li>
-                    </ul>
+                        <ul class="nav nav-tabs flex-column" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="buylistblock-tab" data-bs-toggle="tab" data-bs-target="#buylistblock" type="button" role="tab" aria-controls="buylistblock" aria-selected="true">구매 목록</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="rentallistblock-tab" data-bs-toggle="tab" data-bs-target="#rentallistblock" type="button" role="tab" aria-controls="rentallistblock" aria-selected="false">대여 목록</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="salelistblock-tab" data-bs-toggle="tab" data-bs-target="#salelistblock" type="button" role="tab" aria-controls="salelistblock" aria-selected="false">판매 목록</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="changepwdblock-tab" data-bs-toggle="tab" data-bs-target="#changepwdblock" type="button" role="tab" aria-controls="changepwdblock" aria-selected="false">개인 정보 수정</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 {/* 주문배송 등등 */}
