@@ -1,7 +1,7 @@
 
 import BookListItem from "./BookListItem"
 import BookRegisterModal from "./BookRegisterModal"
-import "./Styles.css"
+import "../Styles.css"
 
 const BookListForm = () =>{
     return( 

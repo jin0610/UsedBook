@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import api from "../Api"
-import LoginForm from "../Components/LoginForm"
+import LoginForm from "../Components/AuthPage/LoginForm"
 const queryString = require('query-string');
 
 const LoginContainer = () =>{

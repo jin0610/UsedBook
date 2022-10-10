@@ -9,16 +9,12 @@ const QuestionListItem = (props) =>{
         
             <div class="num">{qnanum}</div>
             <div class="title">
-                <Link to={{
-                    pathname:"/qnaview",
-                    state:{
-                        qnanum:qnanum,
-                        qnatitle:qnatitle, 
-                        qnawriter:qnawriter, 
-                        qnadate:qnadate
-                    }
-                }}
-            >{qnatitle}</Link></div>
+            <Link to='/qnaview' state={{
+                qnanum:qnanum,
+                qnatitle:qnatitle, 
+                qnawriter:qnawriter, 
+                qnadate:qnadate
+            }}>{qnatitle}</Link></div>
             <div class="writer">{qnawriter}</div>
             <div class="date">{qnadate}</div>
         </>

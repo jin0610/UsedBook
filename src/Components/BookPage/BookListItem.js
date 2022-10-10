@@ -1,5 +1,5 @@
 import BookInfoModal from "./BookInfoModal"
-import "./Styles.css"
+import "../Styles.css"
 
 const BookListItem = (props) =>{
     const {bookname, bookprice, sale, bookIndex} = props

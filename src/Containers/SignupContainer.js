@@ -1,4 +1,4 @@
-import SignupForm from "../Components/SignupForm"
+import SignupForm from "../Components/AuthPage/SignupForm"
 
 const SignupContainer = () =>{
     const [form, setForm] = useState({

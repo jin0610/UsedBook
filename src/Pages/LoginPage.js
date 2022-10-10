@@ -1,5 +1,5 @@
 import Footer from "../Components/Footer"
-import MainNav from "../Components/MainNav"
+import MainNav from "../Components/MainPage/MainNav"
 import LoginContainer from "../Containers/LoginContainer"
 
 const LoginPage = () =>{

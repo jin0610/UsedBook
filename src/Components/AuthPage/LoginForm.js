@@ -1,4 +1,4 @@
-import "./Styles.css"
+import "../Styles.css"
 
 const LoginForm = (props) =>{
     const {form, onChange, onSubmit} = props
