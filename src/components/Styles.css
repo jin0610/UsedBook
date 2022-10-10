@@ -4075,6 +4075,12 @@ textarea.form-control-lg {
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
+
+.nav-item > a {
+  width:100%;
+  text-align:start;
+  color: #000;
+}
 @media (prefers-reduced-motion: reduce) {
   .nav-link {
     transition: none;
@@ -4151,6 +4157,9 @@ textarea.form-control-lg {
 
 .tab-content > .tab-pane {
   display: none;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 2.5rem;
+  
 }
 .tab-content > .active {
   display: block;
@@ -4196,6 +4205,9 @@ textarea.form-control-lg {
   padding-right: 0;
   padding-left: 0;
 }
+
+
+
 .navbar-nav .dropdown-menu {
   position: static;
 }

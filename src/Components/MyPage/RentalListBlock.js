@@ -1,6 +1,6 @@
 const RentalListBlock = () =>{
     return(
-        <div className="tab-pane fade" id="rentallistblock" role="tabpanel" aria-labelledby="rentallistblock-tab">
+        <div className="tab-pane" id="rentallistblock" role="tabpanel" aria-labelledby="rentallistblock-tab">
             <div className="row justify-content-center p-5">
                 <div className="col-3">
                     <img class="card-img-top" src="https://dummyimage.com/150x250/dee2e6/6c757d.jpg" alt="..." />

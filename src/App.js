@@ -31,7 +31,6 @@ function App(){
   )
 }
 
-
 export default App;
 
 /* 
@@ -40,5 +39,4 @@ export default App;
 현재 수정중인 페이지 : 책정보 페이지 css
 구현하지 못한 페이지 : 회원가입, qna 신청목차, 예약&구매창, 관리자페이지, 내정보페이지
 (qna신청 양식은 main페이지 하단에 있는 양식 그대로 사용할지 상의해보기!)
-
 */

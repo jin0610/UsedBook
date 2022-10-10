@@ -1,7 +1,7 @@
 const BuyListBlock = () =>{
 
     return(
-        <div className="tab-pane fade" id="buylistblock" role="tabpanel" aria-labelledby="buylistblock-tab">
+        <div className="tab-pane" id="buylistblock" role="tabpanel" aria-labelledby="buylistblock-tab">
             <div className="row justify-content-center p-5">
                 <div className="col-3">
                     <img class="card-img-top" src="https://dummyimage.com/150x250/dee2e6/6c757d.jpg" alt="..." />
