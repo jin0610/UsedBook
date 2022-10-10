@@ -603,12 +603,14 @@ progress {
   content: "— ";
 }
 .team-member {
-  /* margin-bottom: 3rem; */
+  width: 100%;
   text-align: center;
 }
 .team-member img {
-  width: 10rem;
-  height: 10rem;
+  width:80%;
+  height: 80%;
+  max-width: 10rem;
+  max-height: 10rem;
   border: 0.5rem solid rgba(0, 0, 0, 0.1);
 }
 .team-member h4, .team-member .h4 {
@@ -3637,8 +3639,8 @@ textarea.form-control-lg {
 .collapsing {
   height: 0;
   overflow: hidden;
-  transition: height 0.35s ease;
 }
+
 @media (prefers-reduced-motion: reduce) {
   .collapsing {
     transition: none;
@@ -4208,6 +4210,8 @@ textarea.form-control-lg {
   flex-grow: 1;
   align-items: center;
 }
+
+
 
 .navbar-toggler {
   padding: 0.25rem 0.75rem;
@@ -5226,6 +5230,16 @@ textarea.form-control-lg {
   /* background-color: #fff; */
   /* border: 1px solid rgba(0, 0, 0, 0.125); */
 }
+.list-group-item span {
+  display: inline-block;
+  width: 5rem;
+  font-weight: bold;
+  text-align: end;
+}
+
+.list-group-item > p{
+  display:inline-block
+}
 .list-group-item:first-child {
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
@@ -5255,6 +5269,7 @@ textarea.form-control-lg {
 
 .list-group-horizontal {
   flex-direction: row;
+  text-decoration: none;
 }
 .list-group-horizontal > .list-group-item:first-child {
   border-bottom-left-radius: 0.25rem;

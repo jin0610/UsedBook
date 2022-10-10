@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import Client from "../Client"
+import api from "../Api"
 import LoginForm from "../Components/LoginForm"
 const queryString = require('query-string');
 
@@ -23,7 +23,7 @@ const LoginContainer = () =>{
         e.preventDefault()
         const {std_num, password} = form
         const data = { std_num, password}
-        // Client.post('/',queryString.stringify(data)).then(res => {
+        // Client.post('/login',queryString.stringify(data)).then(res => {
         //     // 세션 저장
         //     if(res.status === 200){
         //         window.location.href = '/main'

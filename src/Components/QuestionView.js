@@ -1,6 +1,10 @@
+import { useLocation } from "react-router"
 import "./Styles.css"
 
-const QuestionView = () =>{
+const QuestionView = (props) =>{
+    const {qnanum, qnatitle, qnawriter, qnadate} = props
+    const location = useLocation();
+    console.log(location.state)
     return( 
         <>
             {/* 제목 및 search bar */}
@@ -16,20 +20,20 @@ const QuestionView = () =>{
                 <div class ="container px-4 px-lg-5 mt-5 board_view_wrap">
                     <div class = "col-md-6 board_view">
                         <div class="viewTitle">
-                            글 제목이 들어갑니다.
+                            {qnatitle}
                         </div>
                         <div class="viewInfo">
                             <dl>
                                 <dt>번호</dt>
-                                <dd>1</dd>
+                                <dd>{qnanum}</dd>
                             </dl>
                             <dl>
                                 <dt>글쓴이</dt>
-                                <dd>신서영</dd>
+                                <dd>{qnawriter}</dd>
                             </dl>
                             <dl>
                                 <dt>작성일</dt>
-                                <dd>2022.10.04</dd>
+                                <dd>{qnadate}</dd>
                             </dl>
                         </div>
                         <div class="viewCont">
