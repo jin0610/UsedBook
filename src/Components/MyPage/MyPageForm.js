@@ -62,7 +62,7 @@ const MyPageForm = () =>{
                             </div>
                         </div>
                     </div>  
-                    <hr/>
+                    
                     <div class="tab-content">
                         <div class="tab-pane active" id="buylistblock" role="tabpanel" aria-labelledby="buylistblock-tab"><BuyListBlock/></div>
 
