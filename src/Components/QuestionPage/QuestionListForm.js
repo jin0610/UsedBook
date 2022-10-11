@@ -1,5 +1,5 @@
 import QuestionListItem from "./QuestionListItem"
-import "./Styles.css"
+import "../Styles.css"
 
 const QuestionListForm = () =>{
     return( 

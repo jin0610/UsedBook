@@ -8,7 +8,7 @@ import MainPage from "./Pages/MainPage";
 import MyPage from "./Pages/MyPage";
 import SignUpPage from "./Pages/SignUpPage";
 import QuestionListPage from "./Pages/QuestionListPage";
-import QuestionView from "./Components/QuestionView";
+import QuestionViewPage from './Pages/QuestionViewPage';
 import QuestionInsertPage from "./Pages/QuestionInsertPage";
 import QuestionEditPage from "./Pages/QuestionEditPage";
 
@@ -23,7 +23,7 @@ function App(){
         <Route path="/mypage" element={<MyPage/>}/>
         <Route path="/booklist" element={<BookListPage/>}/>
         <Route path="/qna" element={<QuestionListPage/>}/>
-        <Route path="/qnaview" element={<QuestionView/>}/>
+        <Route path="/qnaview" element={<QuestionViewPage/>}/>
         <Route path="/qnainsert" element={<QuestionInsertPage/>}/>
         <Route path="/qnaedit" element={<QuestionEditPage/>}/>
       </Routes>

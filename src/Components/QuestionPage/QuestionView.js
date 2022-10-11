@@ -1,5 +1,5 @@
 import { useLocation } from "react-router"
-import "./Styles.css"
+import "../Styles.css"
 
 const QuestionView = () =>{
     const location = useLocation();

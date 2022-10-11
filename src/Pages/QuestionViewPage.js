@@ -1,8 +1,8 @@
-import QuestionView from "../Components/QuestionView"
+import QuestionView from "../Components/QuestionPage/QuestionView"
 import Navigation from "../Components/Navigation"
 import Footer from "../Components/Footer"
 
-const QuestionInsertPage = () =>{
+const QuestionViewPage = () =>{
     return(
         <div>
             <Navigation/>
@@ -12,4 +12,4 @@ const QuestionInsertPage = () =>{
     )
 }
 
-export default QuestionInsertPage
+export default QuestionViewPage
