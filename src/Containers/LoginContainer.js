@@ -11,10 +11,10 @@ const LoginContainer = () =>{
     })
 
     const onChange = (e) =>{
-        const { value, name }= e.target
+        const { value, id }= e.target
         setForm({
             ...form,
-            [name] : value
+            [id] : value
         })
     }
 

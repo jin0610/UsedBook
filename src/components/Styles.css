@@ -2592,7 +2592,7 @@ textarea.form-control-lg {
 }
 
 .form-check {
-  display: block;
+  display: inline-block;
   min-height: 1.5rem;
   padding-left: 1.5em;
   margin-bottom: 0.125rem;
@@ -11605,7 +11605,7 @@ div.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("./assets/img/header-bg.jpg");
+  background-image: url("assets/img/header-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -11739,7 +11739,7 @@ div.masthead .masthead-heading {
 
 section#auth {
   background-color: #212529;
-  background-image: url("./assets/img/header-bg.jpg");
+  background-image: url("assets/img/header-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
 }

@@ -3,7 +3,9 @@ import BookListItem from "./BookListItem"
 import BookRegisterModal from "./BookRegisterModal"
 import "../Styles.css"
 
-const BookListForm = () =>{
+const BookListForm = (props) =>{
+    const {form, onChange, onSubmit} = props
+
     return( 
         <>
             {/* 제목 및 search bar */}
@@ -27,7 +29,11 @@ const BookListForm = () =>{
                     </form>
 
                 </div>
-                <BookRegisterModal/>
+                <BookRegisterModal 
+                    form={form}
+                    onChange={onChange}
+                    onSubmit={onSubmit}
+                />
             </section>
 
             {/* 책 리스트 */}

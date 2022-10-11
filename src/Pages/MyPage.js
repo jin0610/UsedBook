@@ -1,12 +1,12 @@
 import Navigation from "../Components/Navigation"
 import Footer from "../Components/Footer"
-import MyPageForm from "../Components/MyPage/MyPageForm"
+import MypageContainer from "../Containers/MypageContainer"
 
 const MyPage = () =>{
     return(
         <div>
             <Navigation/>
-            <MyPageForm/>
+            <MypageContainer/>
             <Footer/>
         </div>
     )
