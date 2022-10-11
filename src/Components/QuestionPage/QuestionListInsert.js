@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 import React, {useState} from 'react';
 
 
-const QuestionListItem = ({onSaveData}) =>{
+const QuestionListInsert = ({onSaveData}) =>{
     const [form, setForm] = useState({
         name: '',
         email: '',
@@ -28,18 +28,21 @@ const QuestionListItem = ({onSaveData}) =>{
     }
     return(
         <>
-        <div>고객추가</div>
+        <div>qna insert</div>
         <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="username">name
                 <input required placeholder ="이름" type='text' name='name' value={form.name} onChange={handleChange}/>
                 </label>
 
-                <label htmlFor="email">Email
+                <label htmlFor="email">학번
                 <input required placeholder ="이메일" type='email' name='email' value={form.email} onChange={handleChange}/>
                 </label>
 
-                <label htmlFor="phone">phone
+                <label htmlFor="phone">질문제목
+                <input required placeholder ="핸드폰" type='text' name='phone' value={form.phone} onChange={handleChange}/>
+                </label>
+                <label htmlFor="phone">질문내용
                 <input required placeholder ="핸드폰" type='text' name='phone' value={form.phone} onChange={handleChange}/>
                 </label>
             </div>
@@ -51,7 +54,7 @@ const QuestionListItem = ({onSaveData}) =>{
     )
 }
 
-export default QuestionListItem
+export default QuestionListInsert
 
 
 

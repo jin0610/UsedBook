@@ -1,11 +1,24 @@
 import React from 'react';
 
-const Td = ({item, handleRemove, handleEdit}) => {
+const Td = ({item, handleRemove}) => {
+    
     const onRemove = () => {
-        handleRemove(item.id)
+        
+        
     }
-    const onEdit = () => {
-        handleEdit(item);
+    const qnaDelete =() =>{
+        const {id}=item;
+        const data = {id};
+        
+        /*Api.delete('/qna', queryString.stringify(data))
+        .then(res=>{
+            console.log(res)
+            //console.log(data)
+        })
+        .catch(error =>{
+            console.log(error)
+        })*/
+        handleRemove(id)
     }
 
 
@@ -17,11 +30,9 @@ const Td = ({item, handleRemove, handleEdit}) => {
             <td>{item.email}</td>
             <td>{item.phone}</td>
 
-            <td onClick = {onEdit}>
-                <a>O</a>
-            </td>
-            <td onClick={onRemove}>
-                <a>X</a>
+            
+            <td onClick={qnaDelete} >
+                <a>X</a> 
             </td>
         </tr>
         </>

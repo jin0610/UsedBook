@@ -11873,10 +11873,9 @@ section#search form#SearchForm :-ms-input-placeholder {
   width: 10%;
 }
 .board_list .title{
-  width: 65%;
+  width: 60%;
   text-align: left;
 }
-
 .title a{
   text-decoration: none;
   color: black;
@@ -11887,8 +11886,11 @@ section#search form#SearchForm :-ms-input-placeholder {
 .board_list .writer{
   width: 10%;
 }
-.board_list .date{
-  width: 15%;
+.board_list .name{
+  width: 10%;
+}
+.board_list .remove{
+  width: 10%;
 }
 /*하단 페이지 이동*/
 .board_page{

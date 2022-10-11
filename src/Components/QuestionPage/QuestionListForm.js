@@ -1,15 +1,13 @@
 import React, {useEffect, useState, useRef} from "react";
 import axios from 'axios';
 import Tr from './Tr';
-import Modal from './Modal'
-import QuestionListItem from "./QuestionListItem"
+import QuestionListInsert from "./QuestionListInsert";
 import "../Styles.css"
 
 const QuestionListForm = () =>{
     
     const [info, setInfo] = useState([]);
     const [selected, setSelected] = useState('');
-    const [modalOn, setModalOn] = useState(false);
 
     //ref로 변수 담기
     const nextId = useRef(11);
@@ -50,46 +48,24 @@ const QuestionListForm = () =>{
     const handleRemove = (id) => {
         setInfo(info => info.filter(item => item.id !== id));
     }
-    const handleEdit = (item) => {
-        setModalOn(true);
-        const selectedData = {
-            id: item.id,
-            name: item.name,
-            email: item.email,
-            phone: item.phone
-        };
-        console.log(selectedData);
-        setSelected(selectedData);
-    };
-    const handleCancel = () => { //취소버튼 누르면
-        setModalOn(false);
-    }
-    const handleEditSubmit = (item) => { //수정버튼누르면
-        console.log(item);
-        handleSave(item);
-        setModalOn(false);
-    }
-
-   
-    return( 
-        <>
-        <br/><br/><br/><br/><br/><br/><br/>
-            <table>
-                <thead>
-                    <tr>
-                        <th>번호</th>
-                        <th>이름</th>
-                        <th>이메일</th>
-                        <th>폰번호</th>
-                        <th>수정</th>
-                        <th>삭제</th>
+    
+    
+    return(
+        <section class = "py-5 board_wrap" >
+            <table class ="container px-4 px-lg-5 mt-5 board_list_wrap">
+                <thead class="col-md-6 board_list">
+                    <tr class="top">
+                        <th class="num">번호</th>
+                        <th class="title">제목</th>
+                        <th class="writer">학번</th>
+                        <th class="name">이름</th>
+                        <th class="remove">삭제</th>
                     </tr>
                 </thead>
-                <Tr info = {info} handleRemove ={handleRemove} handleEdit={handleEdit}/>
+                <Tr info = {info} handleRemove ={handleRemove} />
             </table>
-            <QuestionListItem onSaveData = {handleSave}/>
-            {/*{modalOn && <Modal selectedData = {selected} handleCancel = {handleCancel} handleEditSubmit ={handleEditSubmit}/>} */}
-        </>
+            <QuestionListInsert onSaveData = {handleSave}/>
+        </section>
     );
 };
         
