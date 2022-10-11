@@ -8,7 +8,7 @@ const QuestionListPage = () =>{
         <div>
             <Navigation/>
             <QuestionListForm/>
-            <QuestionListItem/>
+            
             <Footer/>
         </div>
     )
