@@ -1,6 +1,7 @@
 import "../Styles.css"
 import {Link} from "react-router-dom"
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
+import axios from "axios";
 
 
 const QuestionListInsert = ({onSaveData}) =>{
@@ -16,6 +17,30 @@ const QuestionListInsert = ({onSaveData}) =>{
             [name]: value
         })
     };
+
+    /* Post 2번방식 -> onSubmit에 집어넣기. body옆에 JSON.stringify 이런거 안적어도될까
+    const qnaNameRef = useRef(null);
+    const qnaEmailRef = useRef(null);
+    const qnaPhoneRef = useRef(null);
+    function qnaPost(e){
+        e.preventDefault();
+        console.log("qnaPost");
+        fetch('https://jsonplaceholder.typicode.com/users', {
+            method: "POST",
+            body: ({
+                name: qnaNameRef.current.value,
+                email: qnaEmailRef.current.value,
+                phone: qnaPhoneRef.current.value,
+            }),
+        }).then(res=>{
+            console.log(1);
+        })
+        .catch((err)=>{
+            console.log(2)
+        });
+    }*/
+
+    //위에 작성한 post 방식을 handlesubmit에 합쳐넣음
     const handleSubmit = (e) => {
         e.preventDefault();
         onSaveData(form);
@@ -25,31 +50,62 @@ const QuestionListInsert = ({onSaveData}) =>{
             email:'',
             phone:'',
         })
-    }
+        fetch('https://jsonplaceholder.typicode.com/users',{
+            method: "POST",
+            body: ({
+                name:form.name,
+                email:form.email,
+                phone:form.phone,
+        }),
+    }).then(res=>{
+        console.log(1);
+    }).catch((err)=>{
+        console.log(2);
+    });
+}
+
+    
+
     return(
         <>
-        <div>qna insert</div>
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="username">name
-                <input required placeholder ="이름" type='text' name='name' value={form.name} onChange={handleChange}/>
-                </label>
+        <section class="bg-dark py-5" id="search">
+                <div class="container px-4 px-lg-5 my-5">
+                    <div class="text-center text-white mb-5">
+                        <h1 class="display-4 fw-bolder">Write a Question</h1>
+                    </div> 
+                </div>
+        </section>
+        <div class = "container px-4 px-lg-5 mt-5 board_write_wrap">
+                <form onSubmit={handleSubmit} class = "col-md-6 board_write" >
+                    <div class="writeTtitle">
+                        <label htmlFor="name">name
+                        <input required placeholder ="이름" type='text' name='name' value={form.name} onChange={handleChange} /*2번방식일때 ref={qnaNameRef}*/ />
+                        </label>
+                    </div>
+                    
+                    <div class="writerInfo">
+                            <label htmlFor="email" >학번
+                            <input required placeholder ="이메일" type='email' name='email' value={form.email} onChange={handleChange} /*2번방식일때  ref={qnaEmailRef}*/ />
+                            </label>
+                    <label htmlFor="phone" >질문제목
+                        <input required placeholder ="핸드폰" type='text' name='phone' value={form.phone} onChange={handleChange} /*2번방식일때 ref={qnaPhoneRef}*/ />
+                    </label>
+                    </div>
+                    <div class="writerCont">
+                        <label>질문내용
+                            <textarea required placeholder ="내용" type='text'/>
+                        </label>
+                    </div>
 
-                <label htmlFor="email">학번
-                <input required placeholder ="이메일" type='email' name='email' value={form.email} onChange={handleChange}/>
-                </label>
+                    <div class = "bt_wrap">
+                        <div class = "offset-1 btn btn-outline-dark flex-shrink-0">
+                        <button class="on me-1" type='submit'>저장</button>
+                        </div>
+                    </div>
 
-                <label htmlFor="phone">질문제목
-                <input required placeholder ="핸드폰" type='text' name='phone' value={form.phone} onChange={handleChange}/>
-                </label>
-                <label htmlFor="phone">질문내용
-                <input required placeholder ="핸드폰" type='text' name='phone' value={form.phone} onChange={handleChange}/>
-                </label>
-            </div>
-            <div>
-                <button type='submit'>저장</button>
-            </div>
-        </form>
+                </form>
+        </div>
+        
         </>
     )
 }

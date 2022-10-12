@@ -11929,9 +11929,13 @@ section#search form#SearchForm :-ms-input-placeholder {
   text-align: center;
   font-size: 0;
 }
-.bt_wrap .btn a:hover{
+.bt_wrap .btn button:hover{
   color: white;
-}  
+} 
+.bt_wrap button{
+  border-style: none;
+  background-color: rgba(255,255,255,0);
+}
 /*글자 밖에 벗어나면 버튼 색상이 이상해짐*/
 .bt_wrap .offset-1:first-child{
   margin-left: 0;
@@ -11939,7 +11943,7 @@ section#search form#SearchForm :-ms-input-placeholder {
 .bt_wrap .on{
   border-color: #212529;
 }
-.bt_wrap a{
+.bt_wrap button{
   color: #212529;
   text-decoration:none;
 }
