@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import SignupForm from "../Components/AuthPage/SignupForm"
 
 const SignupContainer = () =>{
+    // 회원가입 post /users
     const [form, setForm] = useState({
         std_num:"",
         std_name:"",
@@ -40,7 +41,7 @@ const SignupContainer = () =>{
         const data = {
             std_num, std_name, password, email, phonenum
         };
-        // client.post('/api/auth/signup',queryString.stringify(data)).then(res => {
+        // Api.post('/users',queryString.stringify(data)).then(res => {
         //     console.log(res)
         //     console.log(data)
     

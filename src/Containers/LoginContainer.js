@@ -4,7 +4,7 @@ import LoginForm from "../Components/AuthPage/LoginForm"
 const queryString = require('query-string');
 
 const LoginContainer = () =>{
-
+    // 로그인 post /users/login
     const [form, setForm] = useState({
         std_num:"",
         password : ""
@@ -23,7 +23,7 @@ const LoginContainer = () =>{
         e.preventDefault()
         const {std_num, password} = form
         const data = { std_num, password}
-        // Client.post('/login',queryString.stringify(data)).then(res => {
+        // Client.post('/users/login',queryString.stringify(data)).then(res => {
         //     // 세션 저장
         //     if(res.status === 200){
         //         window.location.href = '/main'

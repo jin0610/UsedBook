@@ -12,6 +12,7 @@ const BookContainer = () =>{
             bookPrice:"",
             bookSaleValue:""
         })
+        // 책 목록 다보기
         // Api.get('/books')
         // .then((res)=>{
         //     // 리스트 담아오기
@@ -20,7 +21,21 @@ const BookContainer = () =>{
         //     console.error(error)
         // })
     }, []);
+    
+    // 책 상세보기 get /books/{id}
+    const bookInfo = ({id}) =>{
+        console.log("책상세")
+        console.log(id)
+        // Api.get(`/books/${id}`)
+        // .then(res =>{
+        //     console.log(res)
+        // })
+        // .then(err => console.log(err))
+    }
 
+    // 판매 대여 상태별 책 목록 보기  get / books/status/{status}
+    // 글 제목으로 검색 get /books/title/{title}
+    //  책등록 post /books
     const region = "ap-northeast-2"
     const bucket = "버킷 이름"
     // AWS.config.update({
@@ -68,6 +83,7 @@ const BookContainer = () =>{
             form={form}
             onChange={onChange}
             onSubmit={onSubmit}
+            bookInfo={bookInfo}
         />
     )
 }

@@ -4,7 +4,7 @@ import BookRegisterModal from "./BookRegisterModal"
 import "../Styles.css"
 
 const BookListForm = (props) =>{
-    const {form, onChange, onSubmit} = props
+    const {form, onChange, onSubmit, bookInfo} = props
 
     return( 
         <>
@@ -40,11 +40,11 @@ const BookListForm = (props) =>{
             <section class="py-5">
                 <div class="container px-4 px-lg-5 mt-5">
                     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-left">
-                        <BookListItem bookname="book name" bookprice="30,000" sale="판매" bookIndex="1"/>
-                        <BookListItem bookname="book name" bookprice="30,000" sale="대여" bookIndex="2"/>
-                        <BookListItem bookname="book name" bookprice="30,000" sale="판매" bookIndex="3"/>
-                        <BookListItem bookname="book name" bookprice="30,000" sale="판매" bookIndex="4"/>
-                        <BookListItem bookname="book name" bookprice="30,000" sale="대여" bookIndex="5"/>
+                        <BookListItem bookname="book name" bookprice="30,000" sale="판매" bookIndex="1" bookInfo={bookInfo}/>
+                        <BookListItem bookname="book name" bookprice="30,000" sale="대여" bookIndex="2" bookInfo={bookInfo}/>
+                        <BookListItem bookname="book name" bookprice="30,000" sale="판매" bookIndex="3" bookInfo={bookInfo}/>
+                        <BookListItem bookname="book name" bookprice="30,000" sale="판매" bookIndex="4" bookInfo={bookInfo}/>
+                        <BookListItem bookname="book name" bookprice="30,000" sale="대여" bookIndex="5" bookInfo={bookInfo}/>
                     </div>
                 </div>
             </section>

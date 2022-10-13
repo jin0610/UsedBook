@@ -6,7 +6,7 @@ import "../Styles.css"
 import UserDeleteBlock from "./UserDeleteBlock"
 
 const MyPageForm = (props) =>{
-    const {deleteform, deleteChange, userDelete} =props
+    const {deleteform, deleteChange, userDelete, changeform, changeformChange, changeSubmit} =props
     return(
         <div className="container py-5 mt-5">
             <div className="row">
@@ -76,7 +76,7 @@ const MyPageForm = (props) =>{
 
                         <div class="tab-pane" id="salelistblock" role="tabpanel" aria-labelledby="salelistblock-tab"><SaleListBlock/></div>
                         
-                        <div class="tab-pane" id="changepwdblock" role="tabpanel" aria-labelledby="changepwdblock-tab"><ChangePwdBlock/></div>
+                        <div class="tab-pane" id="changepwdblock" role="tabpanel" aria-labelledby="changepwdblock-tab"><ChangePwdBlock changeform={changeform} changeformChange={changeformChange} changeSubmit={changeSubmit}/></div>
 
                         <div class="tab-pane" id="userdeleteblock" role="tabpanel" aria-labelledby="userdeleteblock-tab"><UserDeleteBlock deleteform={deleteform} deleteChange={deleteChange} userDelete={userDelete}/></div>
                     </div>
