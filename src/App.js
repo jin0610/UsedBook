@@ -9,8 +9,6 @@ import MyPage from "./Pages/MyPage";
 import SignUpPage from "./Pages/SignUpPage";
 import QuestionListPage from "./Pages/QuestionListPage";
 import QuestionViewPage from './Pages/QuestionViewPage';
-import QuestionInsertPage from "./Pages/QuestionInsertPage";
-import QuestionEditPage from "./Pages/QuestionEditPage";
 
 function App(){
   return(
@@ -24,8 +22,6 @@ function App(){
         <Route path="/booklist" element={<BookListPage/>}/>
         <Route path="/qna" element={<QuestionListPage/>}/>
         <Route path="/qnaview" element={<QuestionViewPage/>}/>
-        <Route path="/qnainsert" element={<QuestionInsertPage/>}/>
-        <Route path="/qnaedit" element={<QuestionEditPage/>}/>
       </Routes>
     </BrowserRouter>
   )
