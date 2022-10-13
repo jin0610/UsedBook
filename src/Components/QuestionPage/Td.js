@@ -1,11 +1,8 @@
 import React from 'react';
+import {Link} from "react-router-dom"
 
 const Td = ({item, handleRemove}) => {
-    
-    const onRemove = () => {
-        
-        
-    }
+
     const qnaDelete =() =>{
         const {id}=item;
         const data = {id};
@@ -26,7 +23,13 @@ const Td = ({item, handleRemove}) => {
         <>
         <tr>
             <td>{item.id}</td>
-            <td class = "qnaTitle_link">{item.name}</td>
+            <td class = "qnaTitle_link">
+                <Link class="aa" to='qnaview' state={{
+                    qnanum:item.id,
+                    qnatitle:item.name,
+                    qnawriter:item.email,
+                    qnadate:item.phone
+                }}>{item.name}</Link></td>
             <td>{item.email}</td>
             <td>{item.phone}</td>
 
@@ -40,3 +43,26 @@ const Td = ({item, handleRemove}) => {
 };
 
 export default Td;
+/*
+const QuestionListItem = (props) =>{
+    const {qnanum, qnatitle, qnawriter, qnadate} = props
+
+    return(
+        <>
+        
+            <div class="num">{qnanum}</div>
+            <div class="title">
+            <Link to='/qnaview' state={{
+                qnanum:qnanum,
+                qnatitle:qnatitle, 
+                qnawriter:qnawriter, 
+                qnadate:qnadate
+            }}>{qnatitle}</Link></div>
+            <div class="writer">{qnawriter}</div>
+            <div class="date">{qnadate}</div>
+        </>
+                        
+                        
+    )
+    
+}*/

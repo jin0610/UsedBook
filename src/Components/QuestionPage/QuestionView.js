@@ -23,15 +23,15 @@ const QuestionView = () =>{
                         </div>
                         <div class="viewInfo">
                             <dl>
-                                <dt>번호</dt>
+                                <dt>제목</dt>
                                 <dd>{location.state.qnanum}</dd>
                             </dl>
                             <dl>
-                                <dt>글쓴이</dt>
+                                <dt>학번</dt>
                                 <dd>{location.state.qnawriter}</dd>
                             </dl>
                             <dl>
-                                <dt>작성일</dt>
+                                <dt>이름</dt>
                                 <dd>{location.state.qnadate}</dd>
                             </dl>
                         </div>

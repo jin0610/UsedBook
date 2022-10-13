@@ -11904,6 +11904,11 @@ section#search form#SearchForm :-ms-input-placeholder {
 }
 .board_list .qnaTitle_link{
   cursor: pointer;
+  text-decoration: none;
+}
+.board_list .aa{
+  text-decoration: none;
+  color: #212529;
 }
 /*등록버튼*/
 .bt_wrap {
