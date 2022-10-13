@@ -67,31 +67,28 @@ const QuestionListInsert = ({onSaveData}) =>{
     
 
     return(
-        <>
-        <section class="bg-dark py-5" id="search">
-                <div class="container px-4 px-lg-5 my-5">
-                    <div class="text-center text-white mb-5">
-                        <h1 class="display-4 fw-bolder">Write a Question</h1>
-                    </div> 
-                </div>
-        </section>
+        <div class="py-5 board_wrap">
         <div class = "container px-4 px-lg-5 mt-5 board_write_wrap">
+        <p>Insert Question</p>
                 <form onSubmit={handleSubmit} class = "col-md-6 board_write" >
-                    <div class="writeTtitle">
-                        <label htmlFor="name">name
-                        <input required placeholder ="이름" type='text' name='name' value={form.name} onChange={handleChange} /*2번방식일때 ref={qnaNameRef}*/ />
-                        </label>
-                    </div>
-                    
-                    <div class="writerInfo">
+                    <div class="writeInfo">
+                        <div class="writeInfoLeft">
+                            <label htmlFor="name">이름
+                            <input required placeholder ="이름" type='text' name='name' value={form.name} onChange={handleChange} /*2번방식일때 ref={qnaNameRef}*/ />
+                            </label>
+                        </div>
+                        <div class="writeInfoRight">
                             <label htmlFor="email" >학번
                             <input required placeholder ="이메일" type='email' name='email' value={form.email} onChange={handleChange} /*2번방식일때  ref={qnaEmailRef}*/ />
                             </label>
-                    <label htmlFor="phone" >질문제목
-                        <input required placeholder ="핸드폰" type='text' name='phone' value={form.phone} onChange={handleChange} /*2번방식일때 ref={qnaPhoneRef}*/ />
-                    </label>
+                        </div>
                     </div>
-                    <div class="writerCont">
+                        <div class="writeTitle">
+                            <label htmlFor="phone" >질문제목
+                            <input required placeholder ="핸드폰" type='text' name='phone' value={form.phone} onChange={handleChange} /*2번방식일때 ref={qnaPhoneRef}*/ />
+                            </label>
+                        </div>
+                    <div class="writeCont">
                         <label>질문내용
                             <textarea required placeholder ="내용" type='text'/>
                         </label>
@@ -106,7 +103,7 @@ const QuestionListInsert = ({onSaveData}) =>{
                 </form>
         </div>
         
-        </>
+        </div>
     )
 }
 

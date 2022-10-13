@@ -51,21 +51,33 @@ const QuestionListForm = () =>{
     
     
     return(
+        <>
+        <section class="bg-dark py-5" id="search">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white mb-5">
+                    <h1 class="display-4 fw-bolder">Q & A</h1>
+                </div>
+            </div>
+        </section>
         <section class = "py-5 board_wrap" >
-            <table class ="container px-4 px-lg-5 mt-5 board_list_wrap">
-                <thead class="col-md-6 board_list">
+        <p>Question List</p>
+            <table class ="container px-4 px-lg-5 mt-5 board_list_wrap board_list">
+                <thead>
                     <tr class="top">
                         <th class="num">번호</th>
                         <th class="title">제목</th>
-                        <th class="writer">학번</th>
+                        <th class="std_num">학번</th>
                         <th class="name">이름</th>
                         <th class="remove">삭제</th>
                     </tr>
                 </thead>
                 <Tr info = {info} handleRemove ={handleRemove} />
+
+                
             </table>
             <QuestionListInsert onSaveData = {handleSave}/>
         </section>
+        </>
     );
 };
         

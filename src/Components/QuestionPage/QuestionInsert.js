@@ -16,6 +16,9 @@ const QuestionInsert = () =>{
                 <div class ="container px-4 px-lg-5 mt-5 board_write_wrap">
                     <div class = "col-md-6 board_write">
                         <div class="writeTtitle">
+
+
+                            
                             <dl>
                                 <dt>제목</dt>
                                 <dd><input type="text" placeholder="제목 입력"></input></dd>

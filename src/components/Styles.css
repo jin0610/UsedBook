@@ -11848,17 +11848,24 @@ section#search form#SearchForm :-ms-input-placeholder {
 /*질문목록*/
 .board_list{
   width: 100%;
+  
   border-top: 1.5px solid #464646;
 }
 .board_list > div{
   border-bottom: 1px solid #ddd;
   font-size: 0;
 }
-.board_list >div.top{
+.board_list >tr.top{
   border-bottom: 1px solid #999;
 }
 .board_list >div:last-child{
   border-bottom: 1.5px solid #464646;
+}
+.board_list{
+  border-bottom: 1.5px solid #464646;
+}
+.board_list tr.top{
+  border-bottom: 1px solid #999;
 }
 .board_list>div>div{
   display: inline-block;
@@ -11866,14 +11873,14 @@ section#search form#SearchForm :-ms-input-placeholder {
   text-align: center;
   padding: 25px 0;
 }
-.board_list>div.top>div{
+.board_list>tr.top>th{
   font-weight: 600;
 }
 .board_list .num{
-  width: 10%;
+  width: 5%;
 }
 .board_list .title{
-  width: 60%;
+  width: 45%;
   text-align: left;
 }
 .title a{
@@ -11883,46 +11890,21 @@ section#search form#SearchForm :-ms-input-placeholder {
 .board_list .top .title{
   text-align: center;
 }
-.board_list .writer{
-  width: 10%;
+.board_list .std_num{
+  width: 25%;
 }
 .board_list .name{
-  width: 10%;
+  width: 20%;
 }
 .board_list .remove{
-  width: 10%;
+  width: 5%;
 }
-/*하단 페이지 이동*/
-.board_page{
-  margin-top: 30px;
-  text-align: center;
+.board_list .remove_x a{
+  cursor: pointer;
 }
-.board_page a{
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  font-size: 0;
-  line-height: 100%;
-  text-decoration: none;
+.board_list .qnaTitle_link{
+  cursor: pointer;
 }
-.board_page a.bt{
-  color: #212529;
-  font-size: 18px;
-  padding-top: 10px;
-  letter-spacing: -1px;
-}
-.board_page a.num{
-  font-size: 15px;
-  padding-top:9px;
-  color: #212529;
-}
-.board_page a.num.on{
-  border-color: #000;
-  background: #000;
-  color: #fff;
-}
-
-
 /*등록버튼*/
 .bt_wrap {
   margin-top: 70px;
@@ -11936,7 +11918,6 @@ section#search form#SearchForm :-ms-input-placeholder {
   border-style: none;
   background-color: rgba(255,255,255,0);
 }
-/*글자 밖에 벗어나면 버튼 색상이 이상해짐*/
 .bt_wrap .offset-1:first-child{
   margin-left: 0;
 }
@@ -12008,56 +11989,61 @@ section#search form#SearchForm :-ms-input-placeholder {
 .board_write {
   width: 100%;
   font-size: 13px;
-  border-top: 1.5px solid #464646; 
 }
-
-.board_write .title,
-.board_write .info {
+.board_write_wrap > p, .board_wrap>p{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+.board_write .title{
     padding: 15px;
 }
-.board_write .title dl {
-  font-size: 0;
-}
 .board_write .writeInfo {
-  border-top: 1px dashed #ddd;
-  border-bottom: 1.5px solid #464646; 
+  border-top: 1px solid #464646;
+  border-bottom: 1px dashed #464646; 
   font-size: 0;
+  /*padding-bottom: 20px;  첫줄 이름 학번 조금 아래랑 띄우기*/
 }
-
-.board_write .writeInfo dl {
+.board_write .writeTitle{
+  border-bottom: 1px dashed #464646;
+}
+.writeInfoLeft, .writeInfoRight {
   display: inline-block;
   width: 50%;
   vertical-align: middle;
 }
-.board_write .writeTtitle dt,
-.board_write .writeTtitle dd,
-.board_write .writeInfo dt,
-.board_write .writeInfo dd {
+.board_write .writeTitle label,
+.board_write .writeTitle input,
+.board_write .writeInfo label,
+.board_write .writeInfo input {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align:middle;
   font-size: 13px;
 }
-.board_write .writeTtitle dt,
-.board_write .writeInfo dt {
-  width: 100px;
-  padding-top: 15px;
-  padding-left: 20px;
+.board_write .writeTitle label,
+.board_write .writeInfo label,
+.board_write .writeCont label{
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 15px;
 }
-.board_write .writeTtitle dd{
+.board_write .writeTitle input{
   width: calc(100% - 100px);
 }
-.board_write .writeTtitle input[type="text"],
-.board_write .writeInfo input[type="text"],
-.board_write .writeInfo input[type="password"] {
-  padding: 10px 10px 0 10px;
+.board_write .writeTitle input[type="text"],
+.board_write .writeInfoLeft input[type="text"],
+.board_write .writeInfoRight input[type="email"] {
+  padding: 10px;
   box-sizing: border-box;
-  margin-top: 20px;
-  width: 90%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: calc(100% - 10px);
 }
 .board_write .writeCont {
   border-bottom: 1.5px solid #464646; 
 }
-.board_write .writeCont textarea{
+.board_write .writeCont label textarea{
   display: block;
   width: 100%;
   height: 300px;

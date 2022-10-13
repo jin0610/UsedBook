@@ -26,12 +26,12 @@ const Td = ({item, handleRemove}) => {
         <>
         <tr>
             <td>{item.id}</td>
-            <td>{item.name}</td>
+            <td class = "qnaTitle_link">{item.name}</td>
             <td>{item.email}</td>
             <td>{item.phone}</td>
 
             
-            <td onClick={qnaDelete} >
+            <td class="remove_x" onClick={qnaDelete} >
                 <a>X</a> 
             </td>
         </tr>
