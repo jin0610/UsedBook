@@ -46,9 +46,6 @@ const QuestionView = () =>{
                         <div class ="offset-1 btn btn-outline-dark flex-shrink-0">
                             <a href="/qna" class ="on me-1"> 목록 </a>
                         </div>
-                        <div class = "offset-1 btn btn-outline-dark flex-shrink-0">
-                        <a href="/qnaedit" class ="on me-1"> 수정 </a>
-                        </div>
                     </div>
                 </div>
             </section>

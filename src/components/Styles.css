@@ -11916,7 +11916,11 @@ section#search form#SearchForm :-ms-input-placeholder {
   text-align: center;
   font-size: 0;
 }
-.bt_wrap .btn button:hover{
+.bt_wrap a, .bt_wrap button{
+  text-decoration: none;
+  color: #464646;
+}
+.bt_wrap .btn a:hover, .bt_wrap .btn button:hover{
   color: white;
 } 
 .bt_wrap button{
