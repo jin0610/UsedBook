@@ -38,7 +38,7 @@ const QuestionListInsert = ({onSaveData}) =>{
         .catch((err)=>{
             console.log(2)
         });
-    }*/
+    }
 
     //위에 작성한 post 방식을 handlesubmit에 합쳐넣음
     const handleSubmit = (e) => {
@@ -50,42 +50,55 @@ const QuestionListInsert = ({onSaveData}) =>{
             email:'',
             phone:'',
         })
-        fetch('https://jsonplaceholder.typicode.com/users',{
-            method: "POST",
-            body: ({
-                name:form.name,
-                email:form.email,
-                phone:form.phone,
-        }),
-    }).then(res=>{
-        console.log(1);
-    }).catch((err)=>{
-        console.log(2);
-    });
 }
-
+*/
+//테스트
+const handleSubmit = (e) => {
+    e.preventDefault();
+    onSaveData(form);
+    console.log(form);
+    fetch('https://jsonplaceholder.typicode.com/users',{
+        method: "POST",
+        body: ({
+            name:form.name,
+            email:form.email,
+            phone:form.phone,
+    }),
+}).then(res=>{
+    setForm({
+        name: '',
+        email:'',
+        phone:'',
+    })
+    console.log(res);
+    alert('질문이 정상적으로 등록되었습니다');
+}).catch((err)=>{
+    console.log(err);
+    alert('질문 등록을 실패하였습니다.');
+});
+}
     
 
     return(
         <div class="py-5 board_wrap">
         <div class = "container px-4 px-lg-5 mt-5 board_write_wrap">
         <p>Insert Question</p>
-                <form onSubmit={handleSubmit} class = "col-md-6 board_write" >
+                <form onSubmit ={handleSubmit} class = "col-md-6 board_write" >
                     <div class="writeInfo">
                         <div class="writeInfoLeft">
                             <label htmlFor="name">이름
-                            <input required placeholder ="이름" type='text' name='name' value={form.name} onChange={handleChange} /*2번방식일때 ref={qnaNameRef}*/ />
+                            <input required placeholder ="이름" type='text' name='name' value={form.name} onChange={handleChange} /*ref={qnaNameRef} *//>
                             </label>
                         </div>
                         <div class="writeInfoRight">
                             <label htmlFor="email" >학번
-                            <input required placeholder ="이메일" type='email' name='email' value={form.email} onChange={handleChange} /*2번방식일때  ref={qnaEmailRef}*/ />
+                            <input required placeholder ="이메일" type='email' name='email' value={form.email} onChange={handleChange} /*ref={qnaEmailRef} *//>
                             </label>
                         </div>
                     </div>
                         <div class="writeTitle">
                             <label htmlFor="phone" >질문제목
-                            <input required placeholder ="핸드폰" type='text' name='phone' value={form.phone} onChange={handleChange} /*2번방식일때 ref={qnaPhoneRef}*/ />
+                            <input required placeholder ="핸드폰" type='text' name='phone' value={form.phone} onChange={handleChange} /*ref={qnaPhoneRef}*//>
                             </label>
                         </div>
                     <div class="writeCont">

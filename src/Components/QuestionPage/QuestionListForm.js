@@ -39,7 +39,6 @@ const QuestionListForm = () =>{
                             name: data.name,
                             email: data.email,
                             phone: data.phone,
-                            
                         }
                         ))
              nextId.current +=1;
