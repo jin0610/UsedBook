@@ -1,7 +1,7 @@
-import QuestionListForm from "../Components/QuestionListForm"
+import QuestionListForm from "../Components/QuestionPage/QuestionListForm"
 import Navigation from "../Components/Navigation"
 import Footer from "../Components/Footer"
-import QuestionListItem from "../Components/QuestionListItem"
+import QuestionListItem from "../Components/QuestionPage/QuestionListItem"
 
 const QuestionListPage = () =>{
     return(

@@ -1,4 +1,4 @@
-import QuestionInsert from "../Components/QuestionInsert"
+import QuestionInsert from "../Components/QuestionPage/QuestionInsert"
 import Navigation from "../Components/Navigation"
 import Footer from "../Components/Footer"
 
