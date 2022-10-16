@@ -4,7 +4,7 @@ import Api from "../Api"
 import { useEffect, useState } from "react"
 
 const BookContainer = () =>{
-
+    const [booklist, setBookList] = useState([]);
     useEffect(() => {
         setForm({
             bookImg:"assets/img/img-upload.png",
@@ -13,13 +13,15 @@ const BookContainer = () =>{
             bookSaleValue:""
         })
         // 책 목록 다보기
-        // Api.get('/books')
-        // .then((res)=>{
-        //     // 리스트 담아오기
-        // })
-        // .catch(error=>{
-        //     console.error(error)
-        // })
+        Api.get('/books')
+        .then((res)=>{
+            // 리스트 담아오기
+                console.log(res)
+            //  setBookList()
+        })
+        .catch(error=>{
+            console.error(error)
+        })
     }, []);
     
     // 책 상세보기 get /books/{id}
@@ -84,6 +86,7 @@ const BookContainer = () =>{
             onChange={onChange}
             onSubmit={onSubmit}
             bookInfo={bookInfo}
+            booklist={booklist}
         />
     )
 }

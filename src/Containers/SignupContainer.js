@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import SignupForm from "../Components/AuthPage/SignupForm"
+import Api from "../Api"
+const queryString = require('query-string');
 
 const SignupContainer = () =>{
     // 회원가입 post /users
@@ -41,17 +43,17 @@ const SignupContainer = () =>{
         const data = {
             std_num, std_name, password, email, phonenum
         };
-        // Api.post('/users',queryString.stringify(data)).then(res => {
-        //     console.log(res)
-        //     console.log(data)
+        Api.post('/users',queryString.stringify(data)).then(res => {
+            console.log(res)
+            console.log(data)
     
-        //     if(res.status=== 200){
-        //         console.log('회원가입 성공');
-        //         alert('회원가입 성공');
-        //         document.location.href = '/'
-        //     }
+            if(res.status=== 200){
+                console.log('회원가입 성공');
+                alert('회원가입 성공');
+                // document.location.href = '/'
+            }
             
-        // })
+        })
         console.log(form)
     };
 

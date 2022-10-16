@@ -23,12 +23,12 @@ const LoginContainer = () =>{
         e.preventDefault()
         const {std_num, password} = form
         const data = { std_num, password}
-        // Client.post('/users/login',queryString.stringify(data)).then(res => {
+        // api.post('/users/login',queryString.stringify(data)).then(res => {
         //     // 세션 저장
         //     if(res.status === 200){
         //         window.location.href = '/main'
-        //         localStorage.setItem("isAuthorized", "true")
-        //         client.defaults.headers.common['x-access-token'] = res.data.token
+        //         sessionStorage.setItem("isAuthorized", "true")
+        //         
         //     }
         // })
         console.log(data)

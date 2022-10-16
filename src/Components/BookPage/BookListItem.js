@@ -19,6 +19,7 @@ const BookListItem = (props) =>{
 
                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                     <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#bookinfo" data-bs-toggle="modal" onClick={bookInfo}>+ more</a></div>
+                    
                     <BookInfoModal bookIndex={`${bookIndex}`}/>
                 </div>
             </div>
