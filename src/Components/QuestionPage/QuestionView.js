@@ -23,15 +23,15 @@ const QuestionView = () =>{
                         </div>
                         <div class="viewInfo">
                             <dl>
-                                <dt>번호</dt>
+                                <dt>제목</dt>
                                 <dd>{location.state.qnanum}</dd>
                             </dl>
                             <dl>
-                                <dt>글쓴이</dt>
+                                <dt>학번</dt>
                                 <dd>{location.state.qnawriter}</dd>
                             </dl>
                             <dl>
-                                <dt>작성일</dt>
+                                <dt>이름</dt>
                                 <dd>{location.state.qnadate}</dd>
                             </dl>
                         </div>
@@ -45,9 +45,6 @@ const QuestionView = () =>{
                     <div class = "bt_wrap">
                         <div class ="offset-1 btn btn-outline-dark flex-shrink-0">
                             <a href="/qna" class ="on me-1"> 목록 </a>
-                        </div>
-                        <div class = "offset-1 btn btn-outline-dark flex-shrink-0">
-                        <a href="/qnaedit" class ="on me-1"> 수정 </a>
                         </div>
                     </div>
                 </div>
