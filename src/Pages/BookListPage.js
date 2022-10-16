@@ -1,12 +1,12 @@
-import BookListForm from "../Components/BookPage/BookListForm"
 import Navigation from "../Components/Navigation"
 import Footer from "../Components/Footer"
+import BookContainer from "../Containers/BookContainer"
 
 const BookListPage = () =>{
     return(
         <div>
             <Navigation/>
-            <BookListForm/>
+            <BookContainer/>
             <Footer/>
         </div>
     )

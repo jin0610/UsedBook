@@ -1,6 +1,7 @@
 import "./Styles.css"
 
 const Navigation = () =>{
+    // 로그아웃 delete /users/logout
     return(
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav">
             <div class="container">
@@ -30,6 +31,7 @@ const Navigation = () =>{
                         </li>
                         <li class="nav-item"><a class="nav-link" href="/mypage">Mypage</a></li>
                         <li class="nav-item"><a class="nav-link" href="/qna">FAQs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/">LOGOUT</a></li>
                     </ul>
                 </div>
             </div>

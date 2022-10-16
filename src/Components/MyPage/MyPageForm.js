@@ -3,8 +3,10 @@ import ChangePwdBlock from "./ChangePwdBlock"
 import RentalListBlock from "./RentalListBlock"
 import SaleListBlock from "./SaleListBlock"
 import "../Styles.css"
+import UserDeleteBlock from "./UserDeleteBlock"
 
-const MyPageForm = () =>{
+const MyPageForm = (props) =>{
+    const {deleteform, deleteChange, userDelete, changeform, changeformChange, changeSubmit} =props
     return(
         <div className="container py-5 mt-5">
             <div className="row">
@@ -12,6 +14,7 @@ const MyPageForm = () =>{
                 <div className="col-md-3 mt-5">
                     <div className="team-member bg-dark p-3" >
                         <img className="mx-auto rounded-circle" src="assets/img/profile-img.svg" alt="..."/>
+                        <h4 class="">서지인</h4>
                         <h4 class="">00000000</h4>
                     </div>
                     <div className="bg-light">
@@ -27,6 +30,9 @@ const MyPageForm = () =>{
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="changepwdblock-tab" data-bs-toggle="tab" data-bs-target="#changepwdblock" type="button" role="tab" aria-controls="changepwdblock" aria-selected="false">개인 정보 수정</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="userdeleteblock-tab" data-bs-toggle="tab" data-bs-target="#userdeleteblock" type="button" style={{color:"red"}} role="tab" aria-controls="userdeleteblock" aria-selected="false">회원 탈퇴</a>
                             </li>
                         </ul>
                     </div>
@@ -70,7 +76,9 @@ const MyPageForm = () =>{
 
                         <div class="tab-pane" id="salelistblock" role="tabpanel" aria-labelledby="salelistblock-tab"><SaleListBlock/></div>
                         
-                        <div class="tab-pane" id="changepwdblock" role="tabpanel" aria-labelledby="changepwdblock-tab"><ChangePwdBlock/></div>
+                        <div class="tab-pane" id="changepwdblock" role="tabpanel" aria-labelledby="changepwdblock-tab"><ChangePwdBlock changeform={changeform} changeformChange={changeformChange} changeSubmit={changeSubmit}/></div>
+
+                        <div class="tab-pane" id="userdeleteblock" role="tabpanel" aria-labelledby="userdeleteblock-tab"><UserDeleteBlock deleteform={deleteform} deleteChange={deleteChange} userDelete={userDelete}/></div>
                     </div>
                 </div>
 
