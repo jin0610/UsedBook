@@ -2,10 +2,13 @@
 import BookListItem from "./BookListItem"
 import BookRegisterModal from "./BookRegisterModal"
 import "../Styles.css"
+import { useEffect } from "react"
 
 const BookListForm = (props) =>{
-    const {form, onChange, onSubmit, bookInfo, booklist} = props
-
+    const {form, onChange, onSubmit, bookInfo, booklist,statusChange} = props
+    const books = booklist.map((index) =>{
+        return <BookListItem key={index.id} bookname={index.title} bookprice={index.price} sale={index.status} bookIndex={index.id} bookInfo={bookInfo} info={index}/>
+    })
     return( 
         <>
             {/* 제목 및 search bar */}
@@ -30,12 +33,16 @@ const BookListForm = (props) =>{
                     </form>
                     <div className="form-group mb-4 ">
                         <div class="col-7 form-check me-5">
-                            <input type="radio" name="bookSaleValue" id="sale"  className="form-check-input" onChange={onChange} value={"sale"}/>
-                            <label htmlFor="sale" className="form-check-label" style={{color:"white"}}>판매</label>
+                            <input type="radio" name="stauts" id="ALL"  className="form-check-input" value="ALL" onChange={statusChange} defaultChecked/>
+                            <label htmlFor="ALL" className="form-check-label" style={{color:"white"}} >전체</label>
+                        </div>
+                        <div class="col-7 form-check me-5">
+                            <input type="radio" name="stauts" id="SELL"  className="form-check-input" value="SELL" onChange={statusChange}/>
+                            <label htmlFor="SELL" className="form-check-label" style={{color:"white"}}>판매</label>
                         </div>
                         <div class="col-7 form-check">
-                            <input type="radio" name="bookSaleValue" id="rental" className="form-check-input" onChange={onChange} value={"rental"} />
-                            <label htmlFor="rental" className="form-check-label" style={{color:"white"}}>대여</label>
+                            <input type="radio" name="stauts" id="LEND" className="form-check-input" value="LEND" onChange={statusChange}/>
+                            <label htmlFor="LEND" className="form-check-label" style={{color:"white"}}>대여</label>
                         </div>
                     </div>
 
@@ -44,6 +51,7 @@ const BookListForm = (props) =>{
                     form={form}
                     onChange={onChange}
                     onSubmit={onSubmit}
+                    
                 />
             </section>
 
@@ -51,14 +59,7 @@ const BookListForm = (props) =>{
             <section class="py-5">
                 <div class="container px-4 px-lg-5 mt-5">
                     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-left">
-                    {booklist.map((book) =>{
-                        <BookListItem bookname="book name" bookprice="30,000" sale="판매" bookIndex="1" bookInfo={bookInfo}/>
-                    })}
-                       <BookListItem bookname="book name" bookprice="30,000" sale="판매" bookIndex="1" bookInfo={bookInfo}/>
-                        <BookListItem bookname="book name" bookprice="30,000" sale="대여" bookIndex="2" bookInfo={bookInfo}/>
-                        <BookListItem bookname="book name" bookprice="30,000" sale="판매" bookIndex="3" bookInfo={bookInfo}/>
-                        <BookListItem bookname="book name" bookprice="30,000" sale="판매" bookIndex="4" bookInfo={bookInfo}/>
-                        <BookListItem bookname="book name" bookprice="30,000" sale="대여" bookIndex="5" bookInfo={bookInfo}/>
+                    {books}
                     </div>
                 </div>
             </section>

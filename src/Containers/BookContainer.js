@@ -5,37 +5,72 @@ import { useEffect, useState } from "react"
 
 const BookContainer = () =>{
     const [booklist, setBookList] = useState([]);
+    let status = 'ALL'
+    
     useEffect(() => {
         setForm({
             bookImg:"assets/img/img-upload.png",
             bookName:"",
             bookPrice:"",
-            bookSaleValue:""
         })
+        console.log(status)
         // 책 목록 다보기
+
         Api.get('/books')
         .then((res)=>{
             // 리스트 담아오기
-                console.log(res)
-            //  setBookList()
+            console.log(res)
+            setBookList(res.data)
+            console.log(booklist)
         })
-        .catch(error=>{
+        .catch(error=>{console.log("에러")
             console.error(error)
         })
+
+        
     }, []);
     
     // 책 상세보기 get /books/{id}
     const bookInfo = ({id}) =>{
         console.log("책상세")
         console.log(id)
-        // Api.get(`/books/${id}`)
+        // Api.get(`/books/1`)
         // .then(res =>{
         //     console.log(res)
+        //     console.log(res.data)
         // })
         // .then(err => console.log(err))
     }
 
     // 판매 대여 상태별 책 목록 보기  get / books/status/{status}
+    const statusChange = (e) =>{
+        const {value} = e.target
+        status = value
+        console.log(status)
+        if (status === "ALL") {
+            Api.get(`/books`)
+            .then((res)=>{
+                // 리스트 담아오기
+                console.log(res)
+                setBookList(res.data)
+            })
+            .catch(error=>{console.log("에러")
+                console.error(error)
+            })
+        } else {
+            Api.get(`/books/status/${status}`)
+            .then((res)=>{
+                // 리스트 담아오기
+                console.log(res)
+                setBookList(res.data)
+            })
+            .catch(error=>{console.log("에러")
+                console.error(error)
+            })
+        }
+    }
+
+
     // 글 제목으로 검색 get /books/title/{title}
     //  책등록 post /books
     const region = "ap-northeast-2"
@@ -49,7 +84,7 @@ const BookContainer = () =>{
         bookImg:"assets/img/img-upload.png",
         bookName:"",
         bookPrice:"",
-        bookSaleValue:""
+        bookSaleValue:''
     })
 
     const onChange = (e) =>{
@@ -87,6 +122,7 @@ const BookContainer = () =>{
             onSubmit={onSubmit}
             bookInfo={bookInfo}
             booklist={booklist}
+            statusChange={statusChange}
         />
     )
 }

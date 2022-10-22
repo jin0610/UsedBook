@@ -23,14 +23,16 @@ const LoginContainer = () =>{
         e.preventDefault()
         const {std_num, password} = form
         const data = { std_num, password}
-        // api.post('/users/login',queryString.stringify(data)).then(res => {
-        //     // 세션 저장
-        //     if(res.status === 200){
-        //         window.location.href = '/main'
-        //         sessionStorage.setItem("isAuthorized", "true")
-        //         
-        //     }
-        // })
+        api.post('/users/login',data).then(res => {
+            // 세션 저장
+            console.log(res)
+            if(res.status === 200){
+                // window.location.href = '/main'
+                sessionStorage.setItem("user", res.data)
+                
+                
+            }
+        })
         console.log(data)
     }
 
