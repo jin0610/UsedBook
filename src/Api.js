@@ -1,11 +1,13 @@
 import axios from "axios"
+import { getCookie } from "./Containers/Cookies"
 
-const Client = axios.create({
+const Api = axios.create({
     baseURL: 'http://118.67.131.24:8080',
     headers:{
-        "Content-Type":"application/json",
-        
-    }
+        "Content-Type":"application/json; charset=UTF-8",
+    
+    },
+    // Session_Attrs : `${getCookie('Session_Attrs')}`
 })
 
 // Client.interceptors.response.use(
@@ -30,7 +32,7 @@ const Client = axios.create({
 //       },
 // )
 
-export default Client
+export default Api
 
 /*
 - qna 기능 -

@@ -1,12 +1,12 @@
 import FindInfoForm from "../Components/AuthPage/FindInfoForm"
 import Footer from "../Components/Footer"
-import MainNav from "../Components/MainPage/MainNav"
+import Navigation from "../Components/Navigation"
 
 
 const FindInfoPage = () =>{
     return(
         <div>
-            <MainNav/>
+            <Navigation/>
             <FindInfoForm/>
             <Footer/>
         </div>

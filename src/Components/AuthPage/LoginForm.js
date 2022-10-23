@@ -13,13 +13,12 @@ const LoginForm = (props) =>{
                     <div className="row justify-content-center mb-4 mt-5">
                         <div className="col-7">
                             <div className="form-group">
-                                <input className="form-control" id="std_num" type="text" placeholder="STUDENT NUMBER" onChange={onChange} value={form.std_num}/>
-                                <div className="invalid-feedback" data-sb-feedback="name:required">An ID is required.</div>
+                                <input className="form-control" id="id" type="text" placeholder="STUDENT NUMBER" onChange={onChange} value={form.id}/>
+                                
                             </div>
                             <div class="form-group">
                                 <input className="form-control" id="password" type="password" placeholder="PASSWORD" onChange={onChange} value={form.password}/>
-                                <div class="invalid-feedback">A password is required.</div>
-                                <div class="invalid-feedback">Password is not valid.</div>
+                                
                             </div>
 						</div>
                     </div>

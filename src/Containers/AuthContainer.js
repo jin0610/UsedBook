@@ -1,29 +1,30 @@
 import { useEffect, useState } from "react"
+import Navigation from "../Components/Navigation"
 import api from "../Api"
-import LoginForm from "../Components/AuthPage/LoginForm"
 import {getCookie, setCookie} from "./Cookies"
 
-const LoginContainer = () =>{
-    // 로그인 post /users/login
-    // {"id":"user3","email":null,"password":"1234","name":null,"phoneNumber":null,"studentId":null,"type":null}
-
-    const [form, setForm] = useState({
-        id:"",
-        password : ""
+const AuthContainer = () =>{
+    const [loginForm, setLoginForm] = useState({
+        id:'',
+        password:''
     })
-
-    const onChange = (e) =>{
-        const { value, id }= e.target
-        setForm({
-            ...form,
+    useEffect(()=>{
+        setLoginForm({
+            id:'',
+            password:''
+        })
+    })
+    const loginFormChange = (e)=>{
+        const {value, id} = e.target
+        setLoginForm({
+            ...loginForm,
             [id] : value
+            
         })
     }
-
-    
-    const onSubmit=e=>{
+    const login=e=>{
         e.preventDefault()
-        const {id, password} = form
+        const {id, password} = loginForm
         // const data = { id, studentId:null, name:null, password, email:null, phoneNumber:null,departmentId:null ,type:null}
         const data = {id, password}
         api.post('/users/login',data).then(res => {
@@ -49,22 +50,13 @@ const LoginContainer = () =>{
         })
         console.log(data)
     }
-
-    useEffect(() => {
-        setForm({
-            id: '',
-            password: ''
-        })
-    }, []);
-
-    
     return(
-        <LoginForm
-        form={form}
-        onChange={onChange}
-        onSubmit={onSubmit}
+        <Navigation
+            loginForm={loginForm}
+            loginFormChange={loginFormChange}
+            login={login}
         />
     )
 }
 
-export default LoginContainer
+export default AuthContainer

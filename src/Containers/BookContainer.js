@@ -15,8 +15,8 @@ const BookContainer = () =>{
         })
         console.log(status)
         // 책 목록 다보기
-
-        Api.get('/books')
+        
+        Api.get('/books',)
         .then((res)=>{
             // 리스트 담아오기
             console.log(res)
@@ -95,6 +95,7 @@ const BookContainer = () =>{
         })
         console.log(form)
     }
+// {"id":null,"name":"책이름2","title":"제목","publisher":"출판사","author":"저자","image":"이미지2","publicationDate":"출판날짜","price":12000,"content":"내용","status":"LEND","userId":"user1"}
 
     const onSubmit=(e)=>{
         e.preventDefault()
@@ -103,7 +104,7 @@ const BookContainer = () =>{
             alert('모두 입력하세요.');
             return;
         }
-        const data = { bookImg,bookName, bookPrice, bookSaleValue }
+        const data = { name:"책이름10",title:"책 제목", publisher:"출판사" , author:"123", bookPrice, bookSaleValue }
         // Api.post('/books',queryString.stringify(data))
         // .then(res => {    
         //     if(res.status === 200){

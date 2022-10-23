@@ -1,23 +1,41 @@
 import { useEffect, useState } from "react"
 import MyPageForm from "../Components/MyPage/MyPageForm"
-import Api from "../Api"
-const queryString = require('query-string');
+import api from "../Api"
 
 const MypageContainer = () =>{
+    const [userinfo, setUserInfo] = useState();
     useEffect(() => {
         setDeleteForm({
             std_num: '',
             password: ''
         })
-        // Api.get("/books")
-        // .then((res)=>{
-        //     console.log(res)
-        // }).catch(error=>console.log(error))
+        setUserInfo(JSON.parse(sessionStorage.getItem('Session_Attrs')))
+        console.log(userinfo)
+        const SessionAttrs = userinfo
+        api({
+            method:'get',
+            url:'/users/books',
+            // SessionAttrs:{"USER_TYPE":"USER", "SESSION_ID":"1234"}
+        }
+            )
+        .then((res)=>{
+            console.log(res)
+        }).catch(error=>console.log(error))
     }, []);
     // 유저정보보기 get /users
     // 유저가 작성한 판매 대여글 보기 get /users/book
     // 책 정보 변경 patch /books/{id}
+    const bookChange = (id)=>{
+        api.patch(`/books/${id}`)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    }
     // 책 삭제 delete /books/{id}
+    const bookDelete = (id) =>{
+        api.delete(`/books/${id}`)
+        .then(res => console.log(res))
+        .catch(error => console.log(error))
+    }
     // 비밀번호 변경 -> 유저 정보 업데이트 patch /users
     const [changeform, setChangeForm]=useState({
         oldPwd:'',

@@ -2,7 +2,7 @@
   "name": "usedbook",
   "version": "0.1.0",
   "private": true,
-  "proxy":"http://118.67.131.24:8080",
+  "proxy": "http://118.67.131.24:8080",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -13,6 +13,7 @@
     "query-string": "^7.1.1",
     "react": "^18.1.0",
     "react-bootstrap": "^2.5.0",
+    "react-cookie": "^4.1.1",
     "react-dom": "^18.1.0",
     "react-native-vector-icons": "^9.2.0",
     "react-router": "^6.3.0",
