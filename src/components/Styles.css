@@ -11855,8 +11855,7 @@ section#search form#SearchForm :-ms-input-placeholder {
 /*질문목록*/
 .board_list{
   width: 100%;
-  
-  border-top: 1.5px solid #464646;
+  border-top: 0.5px solid #464646;
 }
 .board_list > div{
   border-bottom: 1px solid #ddd;
@@ -11866,13 +11865,17 @@ section#search form#SearchForm :-ms-input-placeholder {
   border-bottom: 1px solid #999;
 }
 .board_list >div:last-child{
-  border-bottom: 1.5px solid #464646;
+  border-bottom: 1px solid #464646;
 }
 .board_list{
-  border-bottom: 1.5px solid #464646;
+  border-bottom: 1px solid #464646;
 }
-.board_list tr.top{
-  border-bottom: 1px solid #999;
+.board_list tr.top{ /*리스트 네임아래*/
+  border-bottom: 1px solid #464646;
+}
+.board_list tr th{
+  padding-top:20px;
+  padding-bottom:20px;
 }
 .board_list>div>div{
   display: inline-block;
@@ -12067,4 +12070,8 @@ section#search form#SearchForm :-ms-input-placeholder {
   box-sizing: border-box;
   border: 0;
   resize: vertical;
+}
+.content_height td{
+  padding-top:20px;
+  padding-bottom:20px;
 }

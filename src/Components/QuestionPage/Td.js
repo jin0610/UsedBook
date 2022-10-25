@@ -21,7 +21,7 @@ const Td = ({item, handleRemove}) => {
 
     return (
         <>
-        <tr>
+        <tr class="content_height">
             <td>{item.id}</td>
             <td class = "qnaTitle_link">
                 <Link class="aa" to='/qnaview' state={{
