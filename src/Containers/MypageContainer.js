@@ -3,27 +3,40 @@ import MyPageForm from "../Components/MyPage/MyPageForm"
 import api from "../Api"
 
 const MypageContainer = () =>{
-    const [userinfo, setUserInfo] = useState();
+    const [userinfo, setUserInfo] = useState({
+        email : "",
+        id : "",
+        name : "",
+        password  : "",
+        phoneNumber : "",
+        studentId : "",
+        type : ""
+    });
+    // const [bookinfo, setBookInfo] = useState();
+
     useEffect(() => {
         setDeleteForm({
             std_num: '',
             password: ''
         })
-        setUserInfo(JSON.parse(sessionStorage.getItem('Session_Attrs')))
-        console.log(userinfo)
-        const SessionAttrs = userinfo
-        api({
-            method:'get',
-            url:'/users/books',
-            // SessionAttrs:{"USER_TYPE":"USER", "SESSION_ID":"1234"}
-        }
-            )
-        .then((res)=>{
-            console.log(res)
-        }).catch(error=>console.log(error))
+        
+        // 유저정보보기 get /users
+        api.get(`/users?userId=${JSON.parse(sessionStorage.getItem('Session_Attrs')).SESSION_ID}`)
+        .then(res =>{
+            setUserInfo(res.data)
+            // console.log(res.data)
+        }).catch(error => console.log(error))
+
+        // 유저가 작성한 책정보 보기 get /users/books 
+        api.get(`/users/books?userId=${JSON.parse(sessionStorage.getItem('Session_Attrs')).SESSION_ID}`)
+        .then(res =>{
+            // console.log(res.data)
+        })
+        .then(error => console.log(error))
+
     }, []);
-    // 유저정보보기 get /users
-    // 유저가 작성한 판매 대여글 보기 get /users/book
+    
+    
     // 책 정보 변경 patch /books/{id}
     const bookChange = (id)=>{
         api.patch(`/books/${id}`)
@@ -36,6 +49,7 @@ const MypageContainer = () =>{
         .then(res => console.log(res))
         .catch(error => console.log(error))
     }
+
     // 비밀번호 변경 -> 유저 정보 업데이트 patch /users
     const [changeform, setChangeForm]=useState({
         oldPwd:'',
@@ -96,15 +110,15 @@ const MypageContainer = () =>{
         const {std_num, password} = deleteform
         
         const data = { std_num, password}
-        // Api.delete('/users', queryString.stringify(data))
-        // .then(res=>{
-        //     console.log(res)
-        //     alert("탈퇴 성공")
-        // })
-        // .catch(error =>{
-        //     console.log(error)
-        //     alert(error)
-        // })
+        api.post(`/users/books?userId=${JSON.parse(sessionStorage.getItem('Session_Attrs')).SESSION_ID}`, data)
+        .then(res=>{
+            console.log(res)
+            alert("탈퇴 성공")
+        })
+        .catch(error =>{
+            console.log(error)
+            alert(error)
+        })
         console.log(deleteform)
     }
     
@@ -117,6 +131,7 @@ const MypageContainer = () =>{
             deleteform={deleteform}
             deleteChange={deleteChange}
             userDelete={userDelete}
+            userinfo={userinfo}
         />
     )
 }

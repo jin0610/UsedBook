@@ -73,13 +73,6 @@ const BookContainer = () =>{
 
     // 글 제목으로 검색 get /books/title/{title}
     //  책등록 post /books
-    const region = "ap-northeast-2"
-    const bucket = "버킷 이름"
-    // AWS.config.update({
-    //     region: region,
-    //     accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
-    //     secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
-    // });
     const [form, setForm] = useState({
         bookImg:"assets/img/img-upload.png",
         bookName:"",

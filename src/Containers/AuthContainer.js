@@ -4,28 +4,38 @@ import api from "../Api"
 import {getCookie, setCookie} from "./Cookies"
 
 const AuthContainer = () =>{
-    const [loginForm, setLoginForm] = useState({
-        id:'',
-        password:''
+    const [form, setForm] = useState({
+        id:null,
+        name:null,
+        password:null,
+        password2:null,
+        email: null,
+        phoneNumber:null,
+        studentId:null,
     })
     useEffect(()=>{
-        setLoginForm({
-            id:'',
-            password:''
+        setForm({
+            id:null,
+            name:null,
+            password:null,
+            password2:null,
+            email: null,
+            phoneNumber:null,
+            studentId:null,
         })
-    })
-    const loginFormChange = (e)=>{
+        
+    },[])
+    const formChange = (e)=>{
         const {value, id} = e.target
-        setLoginForm({
-            ...loginForm,
+        setForm({
+            ...form,
             [id] : value
             
         })
     }
     const login=e=>{
         e.preventDefault()
-        const {id, password} = loginForm
-        // const data = { id, studentId:null, name:null, password, email:null, phoneNumber:null,departmentId:null ,type:null}
+        const {id, password} = form
         const data = {id, password}
         api.post('/users/login',data).then(res => {
             // 세션 저장
@@ -48,13 +58,45 @@ const AuthContainer = () =>{
                 
             }
         })
-        console.log(data)
     }
+    const signup =e =>{
+        e.preventDefault();
+            const { id,name, studentId,  password, password2, email, phoneNumber} = form;
+            // 하나라도 비어있다면
+            if([id,name, studentId, name, password, password2, email, phoneNumber].includes('')){
+                alert('빈칸을 모두 입력하세요.');
+                return;
+            }
+            if (password !== password2){
+                alert('비밀번호가 일치하지 않습니다.');
+                setForm({
+                    ...form,
+                    password: '',
+                    password2: '',
+                })
+                return;
+            }
+            const data = {
+                id, studentId, name, password, email, phoneNumber,departmentId:null ,type:"USER"
+            };
+            api.post('/users',data).then(res => {
+                console.log(res)
+                console.log(data)
+        
+                if(res.status=== 201){
+                    console.log('회원가입 성공');
+                    alert('회원가입 성공');
+                    document.location.href = '/'
+                }
+                
+            })
+        }
     return(
         <Navigation
-            loginForm={loginForm}
-            loginFormChange={loginFormChange}
+            loginForm={form}
+            loginFormChange={formChange}
             login={login}
+            signup={signup}
         />
     )
 }

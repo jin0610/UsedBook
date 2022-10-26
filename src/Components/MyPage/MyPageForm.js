@@ -6,7 +6,7 @@ import "../Styles.css"
 import UserDeleteBlock from "./UserDeleteBlock"
 
 const MyPageForm = (props) =>{
-    const {deleteform, deleteChange, userDelete, changeform, changeformChange, changeSubmit} =props
+    const {deleteform, deleteChange, userDelete, changeform, changeformChange, changeSubmit, userinfo} =props
     return(
         <div className="container py-5 mt-5">
             <div className="row">
@@ -14,8 +14,8 @@ const MyPageForm = (props) =>{
                 <div className="col-md-3 mt-5">
                     <div className="team-member bg-dark p-3" >
                         <img className="mx-auto rounded-circle" src="assets/img/profile-img.svg" alt="..."/>
-                        <h4 class="">서지인</h4>
-                        <h4 class="">00000000</h4>
+                        <h4 class="">{userinfo.name}</h4>
+                        <h4 class="">{userinfo.studentId}</h4>
                     </div>
                     <div className="bg-light">
                         <ul class="nav nav-tabs flex-column" id="myTab" role="tablist">

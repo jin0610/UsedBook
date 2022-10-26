@@ -1,7 +1,7 @@
 const LoginModal = (props) =>{
     const {loginForm, loginFormChange, login} = props
     return(
-        <div className="book-modal modal fade" id="login" tabIndex="-1" role="dialog" aria-hidden="true">
+        <div className="book-modal modal fade" id="login" role="dialog" aria-hidden="true">
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="close-modal" data-bs-dismiss="modal">

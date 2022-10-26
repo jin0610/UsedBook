@@ -60,11 +60,11 @@ const Navigation = (props) =>{
 
                         :   
                             <>
-                            <li class="nav-item me-3"><a class="nav-link" href="#login" data-bs-toggle="modal">LOGIN</a></li>
-                            <LoginModal loginForm={loginForm}
+                            <li class="nav-item me-3"><a class="nav-link" href="/login">LOGIN</a></li>
+                            {/* <LoginModal loginForm={loginForm}
                                 loginFormChange={loginFormChange}
                                 login={login}
-                            />
+                            /> */}
                             <li class="nav-item me-3"><a class="nav-link" href="/signup">SIGNUP</a></li>
                             </>
                         }
