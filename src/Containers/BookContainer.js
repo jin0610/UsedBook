@@ -74,10 +74,17 @@ const BookContainer = () =>{
     // 글 제목으로 검색 get /books/title/{title}
     //  책등록 post /books
     const [form, setForm] = useState({
-        bookImg:"assets/img/img-upload.png",
-        bookName:"",
-        bookPrice:"",
-        bookSaleValue:''
+        id:null,
+        name:null,
+        title:null,
+        publisher:null,
+        author:null,
+        image:null,
+        publicationDate:null,
+        price:null,
+        content:null,
+        status:null,
+        userId:null,
     })
 
     const onChange = (e) =>{

@@ -19,16 +19,16 @@ const MypageContainer = () =>{
             std_num: '',
             password: ''
         })
-        
+        const userId = JSON.parse(sessionStorage.getItem('Session_Attrs')).SESSION_ID
         // 유저정보보기 get /users
-        api.get(`/users?userId=${JSON.parse(sessionStorage.getItem('Session_Attrs')).SESSION_ID}`)
+        api.get(`/users?userId=${userId}`)
         .then(res =>{
             setUserInfo(res.data)
             // console.log(res.data)
         }).catch(error => console.log(error))
 
         // 유저가 작성한 책정보 보기 get /users/books 
-        api.get(`/users/books?userId=${JSON.parse(sessionStorage.getItem('Session_Attrs')).SESSION_ID}`)
+        api.get(`/users/books?userId=${userId}`)
         .then(res =>{
             // console.log(res.data)
         })
