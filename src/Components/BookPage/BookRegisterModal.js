@@ -3,10 +3,6 @@ import { useState } from "react"
 const BookRegisterModal = (props) =>{
     const {form, onChange, onSubmit} = props
 
-    const [image, setImage] = useState({
-        image_file: "",
-        default_image:"assets/img/img-upload.png",
-    })
     return(
         <div className="book-modal modal fade" id="registerModal" tabIndex="-1" role="dialog" aria-hidden="true">
             <div className="modal-dialog">
@@ -17,9 +13,10 @@ const BookRegisterModal = (props) =>{
                     <div className="container">
                         <form className="row justify-content-center" onSubmit={onSubmit}>
                             <div className="col-4 filebox">
-                                {/* <img class="img-fluid  d-block  mx-auto" src="https://dummyimage.com/480x700/dee2e6/6c757d.jpg" alt="..." /> */}
-                                <img className="img-thumbnail  d-block  mx-2" src={form.bookImg} alt="..." />
-                                <input type="file" accept='image/*' className="form-control" id="bookImg" onChange={onChange} value={form.img}/>
+                                <img className="img-thumbnail  d-block  mx-2" src={form.image} alt="..." />
+                                <input type="file" 
+                                // name="image" 
+                                accept='image/png, image/jpeg' className="form-control" id="image" onChange={onChange}/>
                             </div>
 
                             <div className="col-lg-5 text-center">
@@ -28,20 +25,32 @@ const BookRegisterModal = (props) =>{
                                     
                                     <div className="col-8">
                                         <div className="form-group mb-4">
-                                            <input className="form-control"type="text" id="bookName" name="bookName" placeholder="책 이름" 
-                                            onChange={onChange} defaultValue={form.bookName}/>
+                                            <input className="form-control"type="text" id="name" name="name" placeholder="책 이름" 
+                                            onChange={onChange} defaultValue={form.name}/>
+                                        </div>
+                                        <div className="form-group mb-4">
+                                            <input className="form-control"type="text" id="author" name="author" placeholder="저자" 
+                                            onChange={onChange} defaultValue={form.author}/>
+                                        </div>
+                                        <div className="form-group mb-4">
+                                            <input className="form-control"type="text" id="publisher" name="publisher" placeholder="출판사" 
+                                            onChange={onChange} defaultValue={form.publisher}/>
+                                        </div>
+                                        <div className="form-group mb-4">
+                                            <input className="form-control"type="text" id="publicationDate" name="publicationDate" placeholder="출판 날짜" 
+                                            onChange={onChange} defaultValue={form.publicationDate}/>
                                         </div>
                                         <div className="form-group mb-4 ">
                                             <div className="form-check me-5">
-                                            <input type="radio" name="bookSaleValue" id="sale"  className="form-check-input" onChange={onChange} value={"sale"}/>
+                                            <input type="radio" name="status" id="sale"  className="form-check-input" onChange={onChange} value={"sale"}/>
                                             <label htmlFor="sale" className="form-check-label">판매</label>
                                             </div>
                                             <div className="form-check">
-                                            <input type="radio" name="bookSaleValue" id="rental" className="form-check-input" onChange={onChange} value={"rental"} />
+                                            <input type="radio" name="status" id="rental" className="form-check-input" onChange={onChange} value={"rental"} />
                                             <label htmlFor="rental" className="form-check-label">대여</label>
                                             </div>
                                         </div>
-                                        {form.bookSaleValue === "sale"?
+                                        {form.status === "sale"?
 
                                             <div className="form-group mb-4">
                                             <input className="form-control"type="text" 

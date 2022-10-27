@@ -3,6 +3,8 @@ import MyPageForm from "../Components/MyPage/MyPageForm"
 import api from "../Api"
 
 const MypageContainer = () =>{
+    const [reservationList, setReservationList] = useState([])
+    const [buyList, setBuyList] = useState([])
     const [userinfo, setUserInfo] = useState({
         email : "",
         id : "",
@@ -16,10 +18,11 @@ const MypageContainer = () =>{
 
     useEffect(() => {
         setDeleteForm({
-            std_num: '',
+            id: '',
             password: ''
         })
         const userId = JSON.parse(sessionStorage.getItem('Session_Attrs')).SESSION_ID
+
         // 유저정보보기 get /users
         api.get(`/users?userId=${userId}`)
         .then(res =>{
@@ -30,9 +33,15 @@ const MypageContainer = () =>{
         // 유저가 작성한 책정보 보기 get /users/books 
         api.get(`/users/books?userId=${userId}`)
         .then(res =>{
-            // console.log(res.data)
+            setBuyList(res.data)
         })
         .then(error => console.log(error))
+
+        // 예약 목록 보기
+        api.get(`/reservations/request?userId=${userId}`)
+        .then(res => {console.log(res) 
+            setReservationList(res.data.bookDtoList)})
+        .catch(err=>console.log(err))
 
     }, []);
     
@@ -132,6 +141,8 @@ const MypageContainer = () =>{
             deleteChange={deleteChange}
             userDelete={userDelete}
             userinfo={userinfo}
+            reservationList={reservationList}
+            buyList={buyList}
         />
     )
 }

@@ -1,4 +1,5 @@
-const BuyListBlock = () =>{
+const BuyListBlock = (props) =>{
+    const {index} = props
 
     return(
         <div className="tab-pane" id="buylistblock" role="tabpanel" aria-labelledby="buylistblock-tab">
@@ -10,7 +11,7 @@ const BuyListBlock = () =>{
                     <ul className="list-group">
                         <li className="list-group-item">
                             <span className="me-5">책 명</span>
-                            <p>언제나 밤인 세계</p>
+                            <p>{index.name}</p>
                         </li>
                         <li className="list-group-item">
                             <span className="me-5">가 격</span>
