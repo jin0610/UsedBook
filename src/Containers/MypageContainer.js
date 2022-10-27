@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import MyPageForm from "../Components/MyPage/MyPageForm"
 import api from "../Api"
 
+
 const MypageContainer = () =>{
     const [reservationList, setReservationList] = useState([])
     const [buyList, setBuyList] = useState([])
@@ -42,6 +43,10 @@ const MypageContainer = () =>{
         .then(res => {console.log(res) 
             setReservationList(res.data.bookDtoList)})
         .catch(err=>console.log(err))
+
+        api.get(`/reservations/response?userId=${userId}`)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
 
     }, []);
     

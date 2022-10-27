@@ -3,7 +3,6 @@ import LoginModal from "./LoginModal"
 import "./Styles.css"
 
 const Navigation = (props) =>{
-    const {loginForm, loginFormChange, login} = props
     const user = sessionStorage.getItem("Session_Attrs")
     // 로그아웃 delete /users/logout
     const logout = () =>{
@@ -17,17 +16,6 @@ const Navigation = (props) =>{
         <nav class="navbar navbar-expand-lg  fixed-top">
             <div class="container">
             <a class="navbar-brand" href="/">Book Site Title</a>
-            <form id="SearchForm " style={{left:0}}>
-                    {/* <div class="row justify-content-center"> */}
-                    {/* <div class="form-group"> */}
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="BOOK NAME"/>
-                            <button class="btn btn-primary" type="button" id="button-addon2">검색</button>
-                            
-                        </div>
-                    {/* </div> */}
-                    {/* </div>     */}
-                </form>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -61,10 +49,6 @@ const Navigation = (props) =>{
                         :   
                             <>
                             <li class="nav-item me-3"><a class="nav-link" href="/login">LOGIN</a></li>
-                            {/* <LoginModal loginForm={loginForm}
-                                loginFormChange={loginFormChange}
-                                login={login}
-                            /> */}
                             <li class="nav-item me-3"><a class="nav-link" href="/signup">SIGNUP</a></li>
                             </>
                         }
