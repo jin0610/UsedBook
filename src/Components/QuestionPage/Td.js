@@ -1,23 +1,23 @@
 import React from 'react';
 import {Link} from "react-router-dom"
+import api from '../../Api'
 
+
+//질문 삭제할 때 통신
 const Td = ({item, handleRemove}) => {
-
     const qnaDelete =() =>{
         const {id}=item;
         const data = {id};
         
-        /*Api.delete('/qna', queryString.stringify(data))
-        .then(res=>{
+        api.get('/boards').then(res=>{
             console.log(res)
-            //console.log(data)
+            if(res.status===200){
+                console.log('삭제 성공');
+                alert('삭제 성공');
+            }
+            handleRemove(id)
         })
-        .catch(error =>{
-            console.log(error)
-        })*/
-        handleRemove(id)
-    }
-
+    };
 
     return (
         <>
@@ -25,44 +25,18 @@ const Td = ({item, handleRemove}) => {
             <td>{item.id}</td>
             <td class = "qnaTitle_link">
                 <Link class="aa" to='/qnaview' state={{
-                    qnanum:item.id,
-                    qnatitle:item.name,
-                    qnawriter:item.email,
-                    qnadate:item.phone
-                }}>{item.name}</Link></td>
-            <td>{item.email}</td>
-            <td>{item.phone}</td>
+                    title:item.title,
+                    id:item.id,
+                    userId:item.userId,
+                    content:item.content
+                }}>{item.title}</Link></td>
+            <td>{item.userId}</td>
 
-            
             <td class="remove_x" onClick={qnaDelete} >
-                <a>X</a> 
+                <a>✖ </a> 
             </td>
         </tr>
         </>
     )
 };
-
 export default Td;
-/*
-const QuestionListItem = (props) =>{
-    const {qnanum, qnatitle, qnawriter, qnadate} = props
-
-    return(
-        <>
-        
-            <div class="num">{qnanum}</div>
-            <div class="title">
-            <Link to='/qnaview' state={{
-                qnanum:qnanum,
-                qnatitle:qnatitle, 
-                qnawriter:qnawriter, 
-                qnadate:qnadate
-            }}>{qnatitle}</Link></div>
-            <div class="writer">{qnawriter}</div>
-            <div class="date">{qnadate}</div>
-        </>
-                        
-                        
-    )
-    
-}*/

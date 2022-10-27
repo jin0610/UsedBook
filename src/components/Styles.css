@@ -11888,6 +11888,7 @@ section#search form#SearchForm :-ms-input-placeholder {
 }
 .board_list .num{
   width: 5%;
+  padding-left:5px;
 }
 .board_list .title{
   width: 45%;
@@ -11990,9 +11991,6 @@ section#search form#SearchForm :-ms-input-placeholder {
   display: inline-block;
   font-size: 15px;
 }
-.board_view .viewInfo dl dt{
-
-}
 .board_view .viewInfo dl dd{
   margin-left: 10px;
   color: #777;
@@ -12018,13 +12016,13 @@ section#search form#SearchForm :-ms-input-placeholder {
     padding: 15px;
 }
 .board_write .writeInfo {
-  border-top: 1px solid #464646;
-  border-bottom: 1px dashed #464646; 
   font-size: 0;
   /*padding-bottom: 20px;  첫줄 이름 학번 조금 아래랑 띄우기*/
 }
 .board_write .writeTitle{
   border-bottom: 1px dashed #464646;
+  border-top: 1px solid #464646;
+
 }
 .writeInfoLeft, .writeInfoRight {
   display: inline-block;

@@ -19,26 +19,25 @@ const QuestionView = () =>{
                 <div class ="container px-4 px-lg-5 mt-5 board_view_wrap">
                     <div class = "col-md-6 board_view">
                         <div class="viewTitle">
-                            {location.state.qnatitle}
+                             {/* 제목 */}
+                            {location.state.title}
                         </div>
                         <div class="viewInfo">
+                            {/* 게시판아이디, 유저아이디 */}
                             <dl>
-                                <dt>제목</dt>
-                                <dd>{location.state.qnanum}</dd>
+                                <dt>ID</dt>
+                                <dd>{location.state.id}</dd>
                             </dl>
                             <dl>
-                                <dt>학번</dt>
-                                <dd>{location.state.qnawriter}</dd>
-                            </dl>
-                            <dl>
-                                <dt>이름</dt>
-                                <dd>{location.state.qnadate}</dd>
+                                <dt>USER</dt>
+                                <dd>{location.state.userId}</dd>
                             </dl>
                         </div>
                         <div class="viewCont">
-                            글 내용이 들어갑니다
+                            {location.state.content}
                             <br></br><br></br><br></br><br></br><br></br>
                             <br></br><br></br><br></br><br></br><br></br>
+                            
                         </div>
                     </div>
 
@@ -55,15 +54,3 @@ const QuestionView = () =>{
 }
 
 export default QuestionView
-
-/* 버튼 두개일 때
-                    <div class = "bt_wrap">
-                        <div class ="offset-1 btn btn-outline-dark flex-shrink-0">
-                            <a href="#" class ="on me-1"> 등록 </a>
-                            
-                        </div>
-                        <div class = "offset-1 btn btn-outline-dark flex-shrink-0">
-                        <a href="#" class ="on me-1"> 수정 </a>
-                        </div>
-                    </div>
-*/
