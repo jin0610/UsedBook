@@ -11854,7 +11854,7 @@ section#search form#SearchForm :-ms-input-placeholder {
 
 /*질문목록*/
 .board_list{
-  width: 100%;
+  width: 70%;
   border-top: 0.5px solid #464646;
 }
 .board_list > div{
@@ -11887,12 +11887,13 @@ section#search form#SearchForm :-ms-input-placeholder {
   font-weight: 600;
 }
 .board_list .num{
-  width: 5%;
+  width: 20%;
   padding-left:5px;
+  text-align:center;
 }
 .board_list .title{
-  width: 45%;
-  text-align: left;
+  width: 60%;
+  text-align: center;
 }
 .title a{
   text-decoration: none;
@@ -11901,17 +11902,9 @@ section#search form#SearchForm :-ms-input-placeholder {
 .board_list .top .title{
   text-align: center;
 }
-.board_list .std_num{
-  width: 25%;
-}
 .board_list .name{
   width: 20%;
-}
-.board_list .remove{
-  width: 5%;
-}
-.board_list .remove_x a{
-  cursor: pointer;
+  text-align: center;
 }
 .board_list .qnaTitle_link{
   cursor: pointer;
@@ -12072,4 +12065,5 @@ section#search form#SearchForm :-ms-input-placeholder {
 .content_height td{
   padding-top:20px;
   padding-bottom:20px;
+  text-align:center;
 }

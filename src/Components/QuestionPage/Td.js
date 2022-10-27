@@ -5,19 +5,7 @@ import api from '../../Api'
 
 //질문 삭제할 때 통신
 const Td = ({item, handleRemove}) => {
-    const qnaDelete =() =>{
-        const {id}=item;
-        const data = {id};
-        
-        api.get('/boards').then(res=>{
-            console.log(res)
-            if(res.status===200){
-                console.log('삭제 성공');
-                alert('삭제 성공');
-            }
-            handleRemove(id)
-        })
-    };
+
 
     return (
         <>
@@ -31,10 +19,6 @@ const Td = ({item, handleRemove}) => {
                     content:item.content
                 }}>{item.title}</Link></td>
             <td>{item.userId}</td>
-
-            <td class="remove_x" onClick={qnaDelete} >
-                <a>✖ </a> 
-            </td>
         </tr>
         </>
     )

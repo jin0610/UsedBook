@@ -28,11 +28,6 @@ const QuestionListForm = () =>{
         ))
         nextId.current +=1; }}
 
-    //데이터삭제
-    const handleRemove = (id) => {
-        setInfo(info => info.filter(item => item.id !== id));}
-    
-    
     return(
         <>
         <section class="bg-dark py-5" id="search">
@@ -50,10 +45,9 @@ const QuestionListForm = () =>{
                         <th class="num">number</th>
                         <th class="title">title</th>
                         <th class="name">user</th>
-                        <th class="remove">delete</th>
                     </tr>
                 </thead>
-                <Tr info = {info} handleRemove ={handleRemove} />
+                <Tr info = {info} />
             </table>
             <QuestionListInsert onSaveData = {handleSave}/>
         </section>

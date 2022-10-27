@@ -10,7 +10,7 @@ const QuestionListInsert = ({onSaveData}) =>{
         id:'',
         title:'',
         content:'',
-        userId:'',
+        userId:JSON.parse(sessionStorage.getItem('Session_Attrs')).SESSION_ID,
     });
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -20,38 +20,13 @@ const QuestionListInsert = ({onSaveData}) =>{
         })
     };
 
-//--------------> 적용됨
-/*
 const handleSubmit = (e) => {
     e.preventDefault();
     onSaveData(form);
-    console.log(form);
-    fetch('https://jsonplaceholder.typicode.com/users',{
-        method: "POST",
-        body: ({
-            name:form.name,
-            email:form.email,
-            phone:form.phone,
-    }),
-}).then(res=>{
-    setForm({
-        title:'',
-        content:'',
-    })
-    console.log(res);
-    alert('질문이 정상적으로 등록되었습니다');
-}).catch((err)=>{
-    console.log(err);
-    alert('질문 등록을 실패하였습니다.');
-});}  */
+    const{id,title, content, userId} = form;
+    const data = {id,title, content, userId}
 
-const handleSubmit = (e) => {
-    e.preventDefault();
-    onSaveData(form);
-    const{id, title, content, userId} = form;
-    const data = {id, title, content, userId}
-
-    api.post(`/users/books?userId=${userId}`,data).then(res => {
+    api.post(`/boards?userId=${userId}`,data).then(res => {
         if(res.status===201){
             console.log(res);
             alert('질문이 정상적으로 등록되었습니다.')
