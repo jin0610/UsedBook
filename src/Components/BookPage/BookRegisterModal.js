@@ -16,7 +16,7 @@ const BookRegisterModal = (props) =>{
                                 <img className="img-thumbnail  d-block  mx-2" src={form.image} alt="..." />
                                 <input type="file" 
                                 // name="image" 
-                                accept='image/png, image/jpeg' className="form-control" id="image" onChange={onChange}/>
+                                accept='image/png, image/jpeg, image/jpg' className="form-control" id="image" onChange={onChange}/>
                             </div>
 
                             <div className="col-lg-5 text-center">

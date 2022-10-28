@@ -17,10 +17,10 @@ const UserDeleteBlock = (props) =>{
             <form className="row text-center justify-content-center">
                 <div className="col-8">
                     <div className="form-group mb-3">
-                        <input className="form-control" id="std_num" type="text" placeholder="student number" onChange={deleteChange} value={deleteform.std_num}/>
+                        <input className="form-control" id="std_num" type="text" placeholder="student number" onChange={deleteChange} value={deleteform.std_num || ''}/>
                     </div>
                     <div className="form-group mb-3">
-                        <input className="form-control" id="password" type="password" placeholder="password" onChange={deleteChange} value={deleteform.password}/>
+                        <input className="form-control" id="password" type="password" placeholder="password" onChange={deleteChange} value={deleteform.password || ''}/>
                     </div>
                 </div>            
 

@@ -4,11 +4,11 @@ import BookRegisterModal from "./BookRegisterModal"
 import "../Styles.css"
 
 const BookListForm = (props) =>{
-    const {form, onChange, onSubmit, bookInfo, booklist,statusChange, bookId, reservationClick, reservationform, reservationList} = props
+    const {form, onChange, onSubmit, bookInfo, booklist,statusChange, bookId, reservationClick, reservationform} = props
 
     const books = booklist.map((index) =>{
         return <BookListItem key={index.id} bookname={index.name} bookprice={index.price} sale={index.status} bookIndex={index.id} bookInfo={bookInfo} info={index} bookId={bookId} reservationClick={reservationClick}  reservationform={reservationform}
-        reservationList={reservationList}/>
+        />
     })
    
     return( 
