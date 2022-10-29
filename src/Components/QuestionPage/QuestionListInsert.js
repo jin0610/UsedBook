@@ -50,10 +50,13 @@ const handleSubmit = (e) => {
                             <textarea required placeholder ="내용을 입력하시오" ype='text' name='content' value={form.content} onChange={handleChange}/>
                         </label>
                     </div>
-                    <div class = "bt_wrap">
+                    {/* <div class = "bt_wrap">
                         <div class = "offset-1 btn btn-outline-dark flex-shrink-0">
                         <button class="on me-1" type='submit'>저장</button>
                         </div>
+                    </div> */}
+                    <div class = "text-center bt-size">
+                        <button class="btn btn-outline-dark mt-auto" type='submit'> &nbsp;&nbsp; save &nbsp;&nbsp;</button>
                     </div>
                 </form>
         </div>

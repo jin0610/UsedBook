@@ -5,7 +5,7 @@ const FindInfoForm = () =>{
 		<section class="page-section" id="login">
             <div class="container text-center">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Find Password</h2>
+                    <h2 class="section-heading text-uppercase h2-col">Find Password</h2>
                 </div>
 
                 <form id="LoginForm" class="text-center">
@@ -17,7 +17,7 @@ const FindInfoForm = () =>{
                             </div>
                             <div class="form-group">
                                 <input class="form-control mg" id="email" type="email" placeholder="EMAIL"/>
-                                <div class="invalid-feedback">An email is required.</div>
+                                <div class="invalid-feedback text-col">An email is required.</div>
                             </div>
 						</div>
                     </div>

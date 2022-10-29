@@ -241,7 +241,7 @@ sup {
 
 a {
   color: #ffc800;
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:hover {
   color: #cca000;
@@ -4242,6 +4242,7 @@ textarea.form-control-lg {
   border: 1px solid transparent;
   border-radius: 0.25rem;
   transition: box-shadow 0.15s ease-in-out;
+  color:white;
 }
 @media (prefers-reduced-motion: reduce) {
   .navbar-toggler {
@@ -6716,7 +6717,7 @@ textarea.form-control-lg {
 
 .fixed-top {
   position: fixed;
-  top: 0;
+  top: 10px;
   right: 0;
   left: 0;
   z-index: 1030;
@@ -11747,7 +11748,6 @@ div.masthead .masthead-heading {
 .img-brand {
   height: 2.75rem;
 }
-
 section#auth {
   background-color: #212529;
   background-image: url("assets/img/header-bg.jpg");
@@ -11919,33 +11919,6 @@ section#search div#SearchForm :-ms-input-placeholder {
   text-decoration: none;
   color: #212529;
 }
-/*등록버튼*/
-.bt_wrap {
-  margin-top: 70px;
-  text-align: center;
-  font-size: 0;
-}
-.bt_wrap a, .bt_wrap button{
-  text-decoration: none;
-  color: #464646;
-}
-.bt_wrap .btn a:hover, .bt_wrap .btn button:hover{
-  color: white;
-} 
-.bt_wrap button{
-  border-style: none;
-  background-color: rgba(255,255,255,0);
-}
-.bt_wrap .offset-1:first-child{
-  margin-left: 0;
-}
-.bt_wrap .on{
-  border-color: #212529;
-}
-.bt_wrap button{
-  color: #212529;
-  text-decoration:none;
-}
 
 /*qna view css*/
 .board_view{
@@ -12067,6 +12040,7 @@ section#search div#SearchForm :-ms-input-placeholder {
   border: 0;
   resize: vertical;
 }
+/* 마이페이지 크기 수정 */
 .content_height td{
   padding-top:20px;
   padding-bottom:20px;
@@ -12081,4 +12055,19 @@ section#search div#SearchForm :-ms-input-placeholder {
 .my-width{
   flex: 0 0 auto;
   width: 50%;
+}
+/* 등록버튼 크기 */
+.bt-size{
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+/* 비밀번호찾기페이지 css변경(뒷배경 이미지 추가) */
+section#login {
+  background-color: #212529;
+  background-image: url("assets/img/header-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.h2-col{
+  color: #fff;
 }
