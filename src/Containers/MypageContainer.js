@@ -6,7 +6,7 @@ import api from "../Api"
 const MypageContainer = () =>{
     const [reservationList, setReservationList] = useState([])
     const [reservedList, setReservedList] = useState([])
-    const [buyList, setBuyList] = useState([])
+    const [writeList, setwriteList] = useState([])
 
     const [userinfo, setUserInfo] = useState({
         email : "",
@@ -20,7 +20,7 @@ const MypageContainer = () =>{
 
     if((!reservationList)) setReservationList([{id:0, name:null, author:null, price:null, publisher:null, publicationDate:null, image:"https://dummyimage.com/150x250/dee2e6/6c757d.jpg"}])
 
-    if((buyList.length === 0) || (!buyList) ) setBuyList([{id:0, name:null, author:null, price:null, publisher:null, publicationDate:null, image:"https://dummyimage.com/150x250/dee2e6/6c757d.jpg"}])
+    if((writeList.length === 0) || (!writeList) ) setwriteList([{id:0, name:null, author:null, price:null, publisher:null, publicationDate:null, image:"https://dummyimage.com/150x250/dee2e6/6c757d.jpg"}])
 
     if((reservedList.length === 0) || (!reservedList)) setReservedList([{id:0, name:null, author:null, price:null, publisher:null, publicationDate:null, image:"https://dummyimage.com/150x250/dee2e6/6c757d.jpg"}])
 
@@ -41,43 +41,37 @@ const MypageContainer = () =>{
         // 유저가 작성한 책정보 보기 get /users/books 
         api.get(`/users/books?userId=${userId}`)
         .then(res =>{
-            setBuyList(res.data)
+            setwriteList(res.data)
+            console.log(res.data)
         })
         .then(error => console.log(error))
 
         // 예약한 목록 보기
         api.get(`/reservations/request?userId=${userId}`)
         .then(res => {
+            var bookD = new Array(res.data[0].bookDto);
+            // const bookD = res.data[0].bookDto
             console.log("예약한")
-            console.log(res) 
-            setReservationList(res.data.bookDtoList)})
+            // console.log(res.data.bookDto)
+            console.log("book", bookD)
+            setReservationList(bookD)
+            console.log(res.data[0].bookDto)
+        })    
         .catch(err=>console.log(err))
 
         // 예약 받은 목록
         api.get(`/reservations/response?userId=${userId}`)
         .then(res => {
+            var bookD2 = new Array(res.data[0].bookDto);
             console.log("예약받은")
             console.log(res)
-            setReservedList(res.data)
+            console.log(res.data)
+            setReservedList(bookD2)
         })
         .catch(err => console.log(err))
 
     }, []);
     
-    
-    // 책 정보 변경 patch /books/{id}
-    const bookChange = (id)=>{
-        api.patch(`/books/${id}`)
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
-    }
-    // 책 삭제 delete /books/{id}
-    const bookDelete = (id) =>{
-        api.delete(`/books/${id}`)
-        .then(res => console.log(res))
-        .catch(error => console.log(error))
-    }
-
     // 비밀번호 변경 -> 유저 정보 업데이트 patch /users
     const [changeform, setChangeForm]=useState({
         oldPwd:'',
@@ -161,7 +155,7 @@ const MypageContainer = () =>{
             userDelete={userDelete}
             userinfo={userinfo}
             reservationList={reservationList}
-            buyList={buyList}
+            writeList={writeList}
             reservedList={reservedList}
         />
     )

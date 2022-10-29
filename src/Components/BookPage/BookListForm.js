@@ -17,7 +17,7 @@ const BookListForm = (props) =>{
             <section className="bg-dark py-5" id="search">
                 <div className="container px-4 px-lg-5 my-5">
                     <div className="text-center text-white mb-5">
-                        <h1 className="display-4 fw-bolder">Shop in style</h1>
+                        <h1 className="display-4 fw-bolder">Book Shop</h1>
                     </div>
 
                     {/* searchbar */}

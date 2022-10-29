@@ -9,8 +9,7 @@ const BookContainer = () =>{
     const userId = JSON.parse(sessionStorage.getItem('Session_Attrs')).SESSION_ID
 
     useEffect(() => {
-        
-        
+
         console.log(status)
         setTitle('')
         // 책 목록 다보기
@@ -24,7 +23,7 @@ const BookContainer = () =>{
         })
 
 
-        Api.get(`/users?userId=${JSON.parse(sessionStorage.getItem('Session_Attrs')).SESSION_ID}`)
+        Api.get(`/users?userId=${userId}`)
         .then(res =>{
             setReservationForm({...reservationform, phoneNumber : res.data.phoneNumber})
             // console.log(res.data)
@@ -33,7 +32,6 @@ const BookContainer = () =>{
     }, []);
     
 
-    
     // 책 상세보기 get /books/{id}
     const bookInfo = ({id}) =>{
         console.log("책상세")
@@ -81,7 +79,7 @@ const BookContainer = () =>{
     const onSerch = e =>{
         e.preventDefault()
         if(title==='') alert('검색어를 입력하세요')
-        Api.get(`/books/title/${title}`)
+        Api.get(`/books/name?name=${title}`)
         .then(res =>{
             console.log(res)
             setBookList(res.data)

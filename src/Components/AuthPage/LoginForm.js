@@ -13,7 +13,7 @@ const LoginForm = (props) =>{
                     <div className="row justify-content-center mb-4 mt-5">
                         <div className="col-7">
                             <div className="form-group">
-                                <input className="form-control" id="id" type="text" placeholder="STUDENT NUMBER" onChange={onChange} value={form.id}/>
+                                <input className="form-control" id="id" type="text" placeholder="ID" onChange={onChange} value={form.id}/>
                                 
                             </div>
                             <div class="form-group">

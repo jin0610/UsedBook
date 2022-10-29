@@ -58,8 +58,8 @@ const BookRegisterModal = (props) =>{
             publicationDate, price, content, status, userId}
         Api.post(`/books?userId=${userId}`,data)
         .then(res => {    
-            if(res.status === 200){
-                alert("성공")
+            if(res.status === 201){
+                alert("등록 완료했습니다")
                 window.location.href = '/booklist'
             }
         })
@@ -90,7 +90,7 @@ const BookRegisterModal = (props) =>{
         const upload = new AWS.S3.ManagedUpload({
             params: {
               Bucket: "usedbook", // 업로드할 대상 버킷명
-              Key:  "upload/"+date+".jpg", // 업로드할 파일명 (* 확장자를 추가해야 합니다!)
+              Key:  date+userId+".jpg", // 업로드할 파일명 (* 확장자를 추가해야 합니다!)
               Body: file, // 업로드할 파일 객체
             },
           })
@@ -100,7 +100,7 @@ const BookRegisterModal = (props) =>{
           promise.then(
             function (data) {
               alert("이미지 업로드에 성공했습니다.")
-              registerform.image=`https://usedbook.s3.ap-northeast-2.amazonaws.com/upload${date}.jpg`
+              registerform.image=`https://usedbook.s3.ap-northeast-2.amazonaws.com/${date}${userId}.jpg`
             },
             function (err) {
               return alert("오류가 발생했습니다: ", err.message)
@@ -122,7 +122,7 @@ const BookRegisterModal = (props) =>{
                                 alt="..." />
                                 <input type="file" 
                                 // name="image" 
-                                accept='image/png, image/jpeg, image/jpg' className="form-control" id="image" onChange={handleFileInput}/>
+                                accept='image/jpeg, image/jpg' className="form-control" id="image" onChange={handleFileInput}/>
                             </div>
 
                             <div className="col-lg-5 text-center">
@@ -156,14 +156,14 @@ const BookRegisterModal = (props) =>{
                                             <label htmlFor="rental" className="form-check-label">대여</label>
                                             </div>
                                         </div>
-                                        {registerform.status === "SELL"?
+
 
                                             <div className="form-group mb-4">
                                             <input className="form-control"type="text" 
-                                             id="bookPrice" name="bookPrice" placeholder="책 가격"
+                                             id="price" name="price" placeholder="책 가격"
                                             onChange={onRegisterChange} defaultValue={registerform.bookPrice}/>
                                             </div>
-                                        :null}
+       
                                         
                                     </div>
                                 </div>

@@ -4173,8 +4173,8 @@ textarea.form-control-lg {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   top: 0;
   right: 0;
@@ -5260,7 +5260,9 @@ textarea.form-control-lg {
 }
 
 .list-group-item > p{
-  display:inline-block
+  display:inline-block;
+  margin-bottom:0;
+  
 }
 .list-group-item:first-child {
   border-top-left-radius: inherit;
@@ -11743,6 +11745,33 @@ div.masthead .masthead-heading {
   opacity: 0.3;
 }
 
+.block-icon {
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  text-align: end;
+  margin-right: 1rem;
+  margin-top:0.25rem;
+}
+
+.block-icon > div {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem;
+  color: #212529;
+  text-decoration: none;
+}
+
+.icon-group:focus  {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem;
+  color: #212529;
+  text-decoration: none;
+  opacity:0.5;
+}
+
+
 
 
 .img-brand {
@@ -12047,7 +12076,12 @@ section#search div#SearchForm :-ms-input-placeholder {
 }
 .side{
   margin-left:10%;
-  margin-right:20px;
+  margin-right:5px;
+}
+
+.side2{
+  margin-right:10%;
+  margin-left:5px;
 }
 .team-size{
   width:90%;

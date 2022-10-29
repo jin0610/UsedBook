@@ -12,7 +12,7 @@ const Navigation = (props) =>{
      
     }
     return(
-        <nav class="navbar navbar-expand-lg  fixed-top">
+        <div class="navbar navbar-expand-lg  fixed-top">
             <div class="container">
             <a class="navbar-brand" href="/">Book Site Title</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@ const Navigation = (props) =>{
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         
-                        {sessionStorage.getItem("Session_Attrs")!=null? (
+                        {user!=null? (
                             <>
                             <li class="nav-item dropdown me-3">
                             <a class="nav-link dropdown-toggle" 
@@ -59,7 +59,7 @@ const Navigation = (props) =>{
                     </ul>
                 </div>
             </div>
-        </nav>
+        </div>
     )
 }
 

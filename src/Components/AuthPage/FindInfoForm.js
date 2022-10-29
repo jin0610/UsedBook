@@ -2,13 +2,13 @@ import "../Styles.css"
 
 const FindInfoForm = () =>{
     return(
-		<section class="page-section" id="login">
+		<section class="page-section" id="auth">
             <div class="container text-center">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase h2-col">Find Password</h2>
                 </div>
 
-                <form id="LoginForm" class="text-center">
+                <form id="AuthForm" class="text-center">
                     <div class="row justify-content-center mb-4 mt-5">
                         <div class="col-7">
                             <div class="form-group">
