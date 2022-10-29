@@ -1,4 +1,12 @@
 
+import { setCookie } from "../../Containers/Cookies"
+const logout = () =>{
+    setCookie('Session_Attrs','',-1)
+    sessionStorage.clear()
+    window.location.href = '/login'
+    console.log("로그아웃")
+ 
+}
 
 const ChangePwdBlock = (props) =>{
     const {changeform, changeformChange, changeSubmit}=props
@@ -19,7 +27,7 @@ const ChangePwdBlock = (props) =>{
                 </div>            
 
                 <div class="text-center ">
-                    <button class="btn btn-primary btn-ㅡ text-uppercase mb-4" id="submitButton" type="submit">비밀번호 변경</button>
+                    <button class="btn btn-primary btn-ㅡ text-uppercase mb-4" id="submitButton" type="submit" onClick={logout}>비밀번호 변경</button>
                 </div>
             </form>
             </div>

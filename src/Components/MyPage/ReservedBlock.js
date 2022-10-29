@@ -1,15 +1,10 @@
-import { useEffect } from "react"
-import Api from "../../Api"
-
-
-const ReservationBlock = (props) =>{
+const ReservedBlock = (props) =>{
     const {index} = props
     // [{"id":2,"name":"이름1","title":"제목1","`publisher`":"출판사1","author":"저자1","image":"이미지1","publicationDate":"출판날짜1","price":12000,"content":"내용1","status":"RESERVATION","userId":"user1"}
 
 
-    // const reservation = reservationList.map()
     return(
-        <div className="tab-pane" id="reservationblock" role="tabpanel" aria-labelledby="reservationblock-tab">
+        <div className="tab-pane" id="reservedblock" role="tabpanel" aria-labelledby="reservedblock-tab">
             <div className="row justify-content-center p-5">
                 <div className="col-3">
                     {/* info.name */}
@@ -44,4 +39,4 @@ const ReservationBlock = (props) =>{
     )
 }
 
-export default ReservationBlock
+export default ReservedBlock

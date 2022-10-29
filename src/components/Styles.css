@@ -2592,6 +2592,7 @@ textarea.form-control-lg {
 }
 
 .form-check {
+
   display: inline-block;
   min-height: 1.5rem;
   padding-left: 1.5em;
@@ -4172,13 +4173,14 @@ textarea.form-control-lg {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   top: 0;
   right: 0;
   left: 0;
   z-index: 1030;
+  background-color: #212529;
 }
 .navbar > .container,
 .navbar > .container-fluid,
@@ -11807,37 +11809,37 @@ section#search {
   background-position: center;
 }
 
-section#search form#SearchForm .form-group {
+section#search div#SearchForm .form-group {
   margin-bottom: 1.5rem;
 }
 
-section#search form#SearchForm .form-group input{
+section#search div#SearchForm .form-group input{
   padding: 1rem;
 }
-section#search form#SearchForm .form-group input.form-control {
+section#search div#SearchForm .form-group input.form-control {
   height: auto;
 }
 
-section#search form#SearchForm .form-control:focus {
+section#search div#SearchForm .form-control:focus {
   border-color: #ffc800;
   box-shadow: none;
 }
-section#search form#SearchForm ::-webkit-input-placeholder {
+section#search div#SearchForm ::-webkit-input-placeholder {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   
 }
-section#search form#SearchForm :-moz-placeholder {
+section#search div#SearchForm :-moz-placeholder {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   
 }
-section#search form#SearchForm ::-moz-placeholder {
+section#search div#SearchForm ::-moz-placeholder {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
  
 }
-section#search form#SearchForm :-ms-input-placeholder {
+section#search div#SearchForm :-ms-input-placeholder {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   

@@ -5,7 +5,9 @@ import api from "../Api"
 
 const MypageContainer = () =>{
     const [reservationList, setReservationList] = useState([])
+    const [reservedList, setReservedList] = useState([])
     const [buyList, setBuyList] = useState([])
+
     const [userinfo, setUserInfo] = useState({
         email : "",
         id : "",
@@ -15,14 +17,19 @@ const MypageContainer = () =>{
         studentId : "",
         type : ""
     });
-    // const [bookinfo, setBookInfo] = useState();
 
+    if((!reservationList)) setReservationList([{id:0, name:null, author:null, price:null, publisher:null, publicationDate:null, image:"https://dummyimage.com/150x250/dee2e6/6c757d.jpg"}])
+
+    if((buyList.length === 0) || (!buyList) ) setBuyList([{id:0, name:null, author:null, price:null, publisher:null, publicationDate:null, image:"https://dummyimage.com/150x250/dee2e6/6c757d.jpg"}])
+
+    if((reservedList.length === 0) || (!reservedList)) setReservedList([{id:0, name:null, author:null, price:null, publisher:null, publicationDate:null, image:"https://dummyimage.com/150x250/dee2e6/6c757d.jpg"}])
+
+    const userId = JSON.parse(sessionStorage.getItem('Session_Attrs')).SESSION_ID
     useEffect(() => {
         setDeleteForm({
             id: '',
             password: ''
-        })
-        const userId = JSON.parse(sessionStorage.getItem('Session_Attrs')).SESSION_ID
+        })            
 
         // 유저정보보기 get /users
         api.get(`/users?userId=${userId}`)
@@ -38,14 +45,21 @@ const MypageContainer = () =>{
         })
         .then(error => console.log(error))
 
-        // 예약 목록 보기
+        // 예약한 목록 보기
         api.get(`/reservations/request?userId=${userId}`)
-        .then(res => {console.log(res) 
+        .then(res => {
+            console.log("예약한")
+            console.log(res) 
             setReservationList(res.data.bookDtoList)})
         .catch(err=>console.log(err))
 
+        // 예약 받은 목록
         api.get(`/reservations/response?userId=${userId}`)
-        .then(res => console.log(res))
+        .then(res => {
+            console.log("예약받은")
+            console.log(res)
+            setReservedList(res.data)
+        })
         .catch(err => console.log(err))
 
     }, []);
@@ -148,6 +162,7 @@ const MypageContainer = () =>{
             userinfo={userinfo}
             reservationList={reservationList}
             buyList={buyList}
+            reservedList={reservedList}
         />
     )
 }

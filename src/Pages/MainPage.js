@@ -1,12 +1,11 @@
 import Footer from "../Components/Footer"
 import MainForm from "../Components/MainPage/MainForm"
 import Navigation from "../Components/Navigation"
-import AuthContainer from "../Containers/AuthContainer"
 
 const MainPage = () =>{
     return(
         <div>
-            <AuthContainer/>
+            <Navigation/>
             <MainForm/>
             <Footer/>
         </div>

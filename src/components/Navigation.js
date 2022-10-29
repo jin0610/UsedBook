@@ -1,5 +1,4 @@
 import { setCookie } from "../Containers/Cookies"
-import LoginModal from "./LoginModal"
 import "./Styles.css"
 
 const Navigation = (props) =>{
@@ -22,7 +21,10 @@ const Navigation = (props) =>{
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item dropdown me-3">
+                        
+                        {sessionStorage.getItem("Session_Attrs")!=null? (
+                            <>
+                            <li class="nav-item dropdown me-3">
                             <a class="nav-link dropdown-toggle" 
                             aria-current="page" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Books</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -39,10 +41,9 @@ const Navigation = (props) =>{
                                 <li><a class="dropdown-item" href="#!">융합전공</a></li>
                             </ul>
                         </li>
-                        {sessionStorage.getItem("Session_Attrs")!=null? (
-                            <>
                             <li class="nav-item me-3"><a class="nav-link" href="#" onClick={logout}>LOGOUT</a></li>
                             <li class="nav-item me-3"><a class="nav-link" href="/mypage">Mypage</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/qna">FAQs</a></li>
                             
                         </>)
 
@@ -53,7 +54,7 @@ const Navigation = (props) =>{
                             </>
                         }
                         
-                        <li class="nav-item"><a class="nav-link" href="/qna">FAQs</a></li>
+                        
                         
                     </ul>
                 </div>

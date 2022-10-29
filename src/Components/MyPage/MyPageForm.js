@@ -1,13 +1,13 @@
 import BuyListBlock from "./BuyListBlock"
 import ChangePwdBlock from "./ChangePwdBlock"
-import RentalListBlock from "./RentalListBlock"
-import SaleListBlock from "./SaleListBlock"
+
 import "../Styles.css"
 import UserDeleteBlock from "./UserDeleteBlock"
 import ReservationBlock from "./ReservationBlock"
+import ReservedBlock from "./ReservedBlock"
 
 const MyPageForm = (props) =>{
-    const {deleteform, deleteChange, userDelete, changeform, changeformChange, changeSubmit, userinfo, reservationList, buyList} =props
+    const {deleteform, deleteChange, userDelete, changeform, changeformChange, changeSubmit, userinfo, reservationList, buyList,reservedList} =props
     
     const reservation = reservationList.map((index)=>{
         return <ReservationBlock key={index.id} index={index}/>
@@ -16,6 +16,11 @@ const MyPageForm = (props) =>{
     const buy =buyList.map(index =>{
         return <BuyListBlock key={index.id} index={index}/>
     })
+
+    const reserved =reservedList.map(index =>{
+        return <ReservedBlock key={index.id} index={index}/>
+    })
+
     return(
          // <div className="container py-5 mt-5">
         <>
@@ -40,16 +45,12 @@ const MyPageForm = (props) =>{
                                 <a class="nav-link" id="reservationblock-tab" data-bs-toggle="tab" data-bs-target="#reservationblock" type="button" role="tab" aria-controls="reservationblock" aria-selected="true">예약한 목록</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="buylistblock-tab" data-bs-toggle="tab" data-bs-target="#buylistblock" type="button" role="tab" aria-controls="buylistblock" aria-selected="false">구매 목록</a>
+                                <a class="nav-link" id="reservedblock-tab" data-bs-toggle="tab" data-bs-target="#reservedblock" type="button" role="tab" aria-controls="reservedblock" aria-selected="false">예약 받은 목록</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="buylistblock-tab" data-bs-toggle="tab" data-bs-target="#buylistblock" type="button" role="tab" aria-controls="buylistblock" aria-selected="false">작성한 책 목록</a>
                             </li>
                             
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="rentallistblock-tab" data-bs-toggle="tab" data-bs-target="#rentallistblock" type="button" role="tab" aria-controls="rentallistblock" aria-selected="false">대여 목록</a>
-                            </li>
-
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="salelistblock-tab" data-bs-toggle="tab" data-bs-target="#salelistblock" type="button" role="tab" aria-controls="salelistblock" aria-selected="false">판매 목록</a>
-                            </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="changepwdblock-tab" data-bs-toggle="tab" data-bs-target="#changepwdblock" type="button" role="tab" aria-controls="changepwdblock" aria-selected="false">개인 정보 수정</a>
                             </li>
@@ -62,11 +63,11 @@ const MyPageForm = (props) =>{
                 {/* 주문배송 등등 */}
             
                 <div class="my-width bg-light mt-5">
-                    <div className="row mt-5">
+                    <div className="row mt-3">
                         <div className="col">
                             <div className="card text-center justify-content-center py-5">
                                 <div className="card-block">
-                                    <h5 className="mb-3">구매 건수</h5>
+                                    <h5 className="mb-3">작성한 글</h5>
                                     <h1 class="fs-1">0</h1>
                                 </div>
                                 
@@ -75,7 +76,7 @@ const MyPageForm = (props) =>{
                         <div className="col ">
                             <div className="card text-center justify-content-center py-5">
                                 <div className="card-block">
-                                    <h5 className="mb-3">대여 건수</h5>
+                                    <h5 className="mb-3">예약한 건수</h5>
                                     <h1 class="fs-1">0</h1>
                                 </div>
                                 
@@ -84,7 +85,7 @@ const MyPageForm = (props) =>{
                         <div className="col">
                             <div className="card text-center justify-content-center py-5">
                                 <div className="card-block">
-                                    <h5 className="mb-3">판매 건수</h5>
+                                    <h5 className="mb-3">예약받은 건수</h5>
                                     <h1 class="fs-1">0</h1>
                                 </div>
                                 
@@ -92,14 +93,13 @@ const MyPageForm = (props) =>{
                         </div>
                     </div>  
                     
-                    <div class="tab-content">
+                    <div class="tab-content mt-3">
                         <div class="tab-pane active" id="reservationblock" role="tabpanel" aria-labelledby="reservationblock-tab">{reservation}</div>
+
+                        <div class="tab-pane" id="reservedblock" role="tabpanel" aria-labelledby="reservedblock-tab">{reserved}</div>
 
                         <div class="tab-pane" id="buylistblock" role="tabpanel" aria-labelledby="buylistblock-tab">{buy}</div>
 
-                        <div class="tab-pane" id="rentallistblock" role="tabpanel" aria-labelledby="rentallistblock"><RentalListBlock/></div>
-
-                        <div class="tab-pane" id="salelistblock" role="tabpanel" aria-labelledby="salelistblock-tab"><SaleListBlock/></div>
                         
                         <div class="tab-pane" id="changepwdblock" role="tabpanel" aria-labelledby="changepwdblock-tab"><ChangePwdBlock changeform={changeform} changeformChange={changeformChange} changeSubmit={changeSubmit}/></div>
 
