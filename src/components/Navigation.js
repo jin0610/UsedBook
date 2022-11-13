@@ -14,8 +14,8 @@ const Navigation = (props) =>{
     return(
         <div class="navbar navbar-expand-lg  fixed-top">
             <div class="container">
-                {user? <a class="navbar-brand" href="/booklist">Book Site Title</a>:
-                 <a class="navbar-brand" href="/">Book Site Title</a>}
+                {user? <a class="navbar-brand" href="/booklist">SC Book Site</a>:
+                 <a class="navbar-brand" href="/">SC Book Site</a>}
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
