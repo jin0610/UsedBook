@@ -1,24 +1,30 @@
 import ChangePwdBlock from "./ChangePwdBlock"
-
 import "../Styles.css"
 import UserDeleteBlock from "./UserDeleteBlock"
 import ReservationBlock from "./ReservationBlock"
 import ReservedBlock from "./ReservedBlock"
 import WriteListBlock from "./WriteListBlock"
+import BookEditModal from "./BookEditModal"
 
 const MyPageForm = (props) =>{
     const {deleteform, deleteChange, userDelete, changeform, changeformChange, changeSubmit, userinfo, reservationList, writeList,reservedList} =props
     
     const reservation = reservationList.map((index)=>{
-        return <ReservationBlock key={index.id} index={index}/>
+        return <ReservationBlock key={index.bookDto.id} index={index}/>
+    })
+
+    const writeModal = writeList.map(index=>{
+        return <BookEditModal key={index.id} id ={index.id} index={index}/>
     })
 
     const write =writeList.map(index =>{
-        return <WriteListBlock key={index.id} index={index}/>
+        return <WriteListBlock key={index.id} index={index} writeModal={writeModal}/>
     })
 
+    
+
     const reserved =reservedList.map(index =>{
-        return <ReservedBlock key={index.id} index={index}/>
+        return <ReservedBlock key={index.bookDto.id} index={index}/>
     })
 
     return(

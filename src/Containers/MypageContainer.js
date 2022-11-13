@@ -18,11 +18,12 @@ const MypageContainer = () =>{
         type : ""
     });
 
-    if((!reservationList)) setReservationList([{id:0, name:null, author:null, price:null, publisher:null, publicationDate:null, image:"https://dummyimage.com/150x250/dee2e6/6c757d.jpg"}])
+    if((!reservationList)) setReservationList([
+        {bookDto:{id:0, name:null, author:null, image:"https://dummyimage.com/150x250/dee2e6/6c757d.jpg", price:null, publisher:null, publicationDate:null}}])
 
     if((writeList.length === 0) || (!writeList) ) setwriteList([{id:0, name:null, author:null, price:null, publisher:null, publicationDate:null, image:"https://dummyimage.com/150x250/dee2e6/6c757d.jpg"}])
 
-    if((reservedList.length === 0) || (!reservedList)) setReservedList([{id:0, name:null, author:null, price:null, publisher:null, publicationDate:null, image:"https://dummyimage.com/150x250/dee2e6/6c757d.jpg"}])
+    if((reservedList.length === 0) || (!reservedList)) setReservedList([ {bookDto:{id:0, name:null, author:null, image:"https://dummyimage.com/150x250/dee2e6/6c757d.jpg", price:null, publisher:null, publicationDate:null},reservationDto:{phoneNumber:null}}])
 
     const userId = JSON.parse(sessionStorage.getItem('Session_Attrs')).SESSION_ID
     useEffect(() => {
@@ -35,38 +36,27 @@ const MypageContainer = () =>{
         api.get(`/users?userId=${userId}`)
         .then(res =>{
             setUserInfo(res.data)
-            // console.log(res.data)
         }).catch(error => console.log(error))
 
         // 유저가 작성한 책정보 보기 get /users/books 
         api.get(`/users/books?userId=${userId}`)
         .then(res =>{
             setwriteList(res.data)
-            console.log(res.data)
         })
-        .then(error => console.log(error))
+        .catch(error => console.log(error))
 
         // 예약한 목록 보기
         api.get(`/reservations/request?userId=${userId}`)
         .then(res => {
-            var bookD = new Array(res.data[0].bookDto);
-            // const bookD = res.data[0].bookDto
-            console.log("예약한")
-            // console.log(res.data.bookDto)
-            console.log("book", bookD)
-            setReservationList(bookD)
-            console.log(res.data[0].bookDto)
+            setReservationList(res.data)
         })    
         .catch(err=>console.log(err))
 
         // 예약 받은 목록
         api.get(`/reservations/response?userId=${userId}`)
         .then(res => {
-            var bookD2 = new Array(res.data[0].bookDto);
-            console.log("예약받은")
-            console.log(res)
-            console.log(res.data)
-            setReservedList(bookD2)
+            setReservedList(res.data)
+            
         })
         .catch(err => console.log(err))
 
@@ -108,8 +98,6 @@ const MypageContainer = () =>{
             return;
         }
         const data = {oldPwd, newPwd}
-
-        console.log("패스워드 변경 성공")
     }
 
 
@@ -134,14 +122,12 @@ const MypageContainer = () =>{
         const data = { std_num, password}
         api.post(`/users/books?userId=${JSON.parse(sessionStorage.getItem('Session_Attrs')).SESSION_ID}`, data)
         .then(res=>{
-            console.log(res)
             alert("탈퇴 성공")
         })
         .catch(error =>{
             console.log(error)
             alert(error)
         })
-        console.log(deleteform)
     }
     
     

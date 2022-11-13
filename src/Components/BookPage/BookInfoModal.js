@@ -1,8 +1,9 @@
+
 const BookInfoModal = (props) =>{
-    const {bookIndex, info, reservationClick, closeModal } = props
-    console.log(info)
+    const {bookIndex, reservationClick, info } = props
+
     return(
-        <div className="book-modal modal fade" id="bookinfo" tabIndex="-1" role="dialog">
+        <div className="book-modal modal fade" id={`bookinfo${bookIndex}`} tabIndex="-1" role="dialog">
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="close-modal" data-bs-dismiss="modal" >
@@ -11,7 +12,8 @@ const BookInfoModal = (props) =>{
                     <div className="container">
                         <div className="row justify-content-center align-items-center">
                             <div className="col-4">
-                                <img className="img-fluid d-block mx-auto" src={info.image} alt="..." />
+                                {info.image ?
+                                <img className="img-fluid d-block mx-auto" src={info.image} alt="..." /> :null}
                             </div>
 
                             <div className="col-lg-3">

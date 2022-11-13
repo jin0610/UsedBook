@@ -1,20 +1,16 @@
 import BookInfoModal from "./BookInfoModal"
 import "../Styles.css"
 import { useState } from "react"
+import { useEffect } from "react"
+import Api from "../../Api"
 
 const BookListItem = (props) =>{
-    const {bookname, bookprice, sale, bookIndex, bookInfo, info, bookId, reservationClick, reservationform} = props
-
-    const [modal,setModal] = useState(false)
+    const {bookname, bookprice, sale, bookIndex, info, bookId, reservationClick, reservationform, bookModal} = props
 
     const setbookIndex= ()=>{
-        reservationform.bookId = bookIndex
-        console.log(reservationform.bookId)
+        reservationform.bookId = info.id
     }
-    const closeModal = () =>{
-        setModal(false)
-    }
-
+   
     return(
         <>
         <div className="col mb-5">
@@ -30,15 +26,15 @@ const BookListItem = (props) =>{
                 </div>
 
                 <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                    <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#bookinfo" data-bs-toggle="modal" onClick={setbookIndex}>+ more</a></div>
+                    <div className="text-center"><a className="btn btn-outline-dark mt-auto" href={`#bookinfo${bookIndex}`} data-bs-toggle="modal" onClick={setbookIndex}>+ more</a></div>
                 </div>
+                {bookModal}
+
+                
+                
             </div>
         </div>
-        <BookInfoModal bookIndex={bookIndex} info={info}
-        reservationClick={reservationClick} closeModal={closeModal}/>
-
-        {/* {modal &&<BookInfoModal bookIndex={bookIndex} info={info}
-        reservationClick={reservationClick} closeModal={closeModal}/>} */}
+        
         </>
     )
 }

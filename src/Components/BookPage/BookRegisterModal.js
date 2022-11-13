@@ -41,7 +41,6 @@ const BookRegisterModal = (props) =>{
             ...registerform,
             [name] : value
         })
-        console.log(registerform)
     }
 
     const onSubmit=(e)=>{
@@ -63,13 +62,13 @@ const BookRegisterModal = (props) =>{
                 window.location.href = '/booklist'
             }
         })
-        console.log(data)
+
     }
 
 
     let now = new Date()
     const date =  String(now.getMonth()) + String(now.getDate()) + String(now.getHours()) + ":" + String(now.getMinutes()) +":"+ String(now.getSeconds())
-    console.log(date)
+
     AWS.config.update({
         region :"ap-northeast-2",
         credentials: new AWS.CognitoIdentityCredentials({

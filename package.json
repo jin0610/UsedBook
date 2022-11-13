@@ -2,7 +2,7 @@
   "name": "usedbook",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://118.67.131.24:8080",
+  "proxy": "http://118.67.142.53:8080",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",

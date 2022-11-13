@@ -1,15 +1,9 @@
-
-import { setCookie } from "../../Containers/Cookies"
-
 const UserDeleteBlock = (props) =>{
     const {deleteform, deleteChange} = props
     const logout = () =>{
         window.location.href = '/'
-        setCookie('Session_Attrs','',-1)
         sessionStorage.clear()
-        
         console.log("로그아웃")
-     
     }
     return(
         <div className="tab-pane" id="userdeleteblock" role="tabpanel" aria-labelledby="userdeleteblock-tab">

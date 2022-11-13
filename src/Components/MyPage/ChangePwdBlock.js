@@ -1,11 +1,7 @@
 
-import { setCookie } from "../../Containers/Cookies"
 const logout = () =>{
-    setCookie('Session_Attrs','',-1)
     sessionStorage.clear()
-    window.location.href = '/login'
-    console.log("로그아웃")
- 
+    window.location.href = '/login' 
 }
 
 const ChangePwdBlock = (props) =>{

@@ -1,8 +1,7 @@
 import axios from "axios"
-import { getCookie } from "./Containers/Cookies"
 
 const Api = axios.create({
-    baseURL: 'http://118.67.131.24:8080',
+    baseURL: 'http://118.67.142.53:8080',
     headers:{
         "Content-Type":"application/json; charset=UTF-8",
     

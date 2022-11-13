@@ -10,7 +10,6 @@ const BookContainer = () =>{
 
     useEffect(() => {
 
-        console.log(status)
         setTitle('')
         // 책 목록 다보기
         Api.get('/books',)
@@ -26,37 +25,28 @@ const BookContainer = () =>{
         Api.get(`/users?userId=${userId}`)
         .then(res =>{
             setReservationForm({...reservationform, phoneNumber : res.data.phoneNumber})
-            // console.log(res.data)
+
         }).catch(error => console.log(error))
 
     }, []);
-    
-
-    // 책 상세보기 get /books/{id}
-    const bookInfo = ({id}) =>{
-        console.log("책상세")
-        console.log(id)
-    }
 
     // 판매 대여 상태별 책 목록 보기  get / books/status/{status}
     const statusChange = (e) =>{
         const {value} = e.target
         status = value
-        console.log(status)
         if (status === "ALL") {
             Api.get(`/books`)
             .then((res)=>{
                 // 리스트 담아오기
                 setBookList(res.data)
             })
-            .catch(error=>{console.log("에러")
+            .catch(error=>{
                 console.error(error)
             })
         } else {
             Api.get(`/books/status/${status}`)
             .then((res)=>{
                 // 리스트 담아오기
-                console.log(res)
                 setBookList(res.data)
                 
             })
@@ -74,17 +64,15 @@ const BookContainer = () =>{
     const ontitleChange = e =>{
         const {name, value} = e.target
         setTitle(`${value}`)
-        console.log(title)
     }
     const onSerch = e =>{
         e.preventDefault()
         if(title==='') alert('검색어를 입력하세요')
         Api.get(`/books/name?name=${title}`)
         .then(res =>{
-            console.log(res)
+
             setBookList(res.data)
         })
-        .catch(err => console.log(err))
     }
 
 
@@ -108,7 +96,6 @@ const BookContainer = () =>{
         const data = {id, bookId, userId, phoneNumber}
         Api.post(`/reservations?userId=${JSON.parse(sessionStorage.getItem('Session_Attrs')).SESSION_ID}`,data)
         .then(res =>{
-            console.log(res)
             if(res.status === 200){
                 alert("예약 완료되었습니다.")
                 window.location.href = '/booklist'
@@ -119,7 +106,6 @@ const BookContainer = () =>{
 
     return(
         <BookListForm 
-            bookInfo={bookInfo}
             statusChange={statusChange}
             reservationform={reservationform}
             booklist={booklist}

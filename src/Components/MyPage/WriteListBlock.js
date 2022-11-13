@@ -1,9 +1,8 @@
 import api from "../../Api"
-import BookEditModal from "./BookEditModal"
 
 const WriteListBlock = (props) =>{
-    const {index} = props
-    // [{"id":2,"name":"이름1","title":"제목1","`publisher`":"출판사1","author":"저자1","image":"이미지1","publicationDate":"출판날짜1","price":12000,"content":"내용1","status":"RESERVATION","userId":"user1"}
+    const {index, writeModal} = props
+
     const userId = JSON.parse(sessionStorage.getItem('Session_Attrs')).SESSION_ID
     const  onDelete = () =>{
         const data = {userId:userId}
@@ -19,8 +18,8 @@ const WriteListBlock = (props) =>{
         <div className="tab-pane" id="writelistblock" role="tabpanel" aria-labelledby="writelistblock-tab">
             <div className="block-icon">
                 <div className="icon-group" id="edit">
-                    <a href="#editmodal" data-bs-toggle="modal"><img src={"/assets/icon/edit_icon.svg"}/></a>
-                    <BookEditModal id ={index.id} index={index}/>
+                    <a href={`#editmodal${index.id}`}  data-bs-toggle="modal"><img src={"/assets/icon/edit_icon.svg"}/></a>
+                    {writeModal}
                 </div>
                 <div className="icon-group">
                     <a href="#" onClick={onDelete}><img src={"/assets/icon/delete_icon.svg"}/></a>

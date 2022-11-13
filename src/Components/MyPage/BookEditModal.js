@@ -40,7 +40,6 @@ const BookEditModal = (props) =>{
             ...editform,
             [name] : value
         })
-        console.log(editform)
     }
 
     const onEdit=(e)=>{
@@ -48,11 +47,7 @@ const BookEditModal = (props) =>{
         
         const {id, name, title, publisher, author, image,
             publicationDate, price, content, status, userId} = editform
-        // if([name, title, publisher, author,
-        //     publicationDate, price, content, status].includes('')){
-        //     alert('모두 입력하세요.');
-        //     return;
-        // }
+
         const data = { id, name, title, publisher, author, image,
             publicationDate, price, content, status, userId}
 
@@ -63,13 +58,12 @@ const BookEditModal = (props) =>{
                 window.location.href = '/mypage'
             }
         })
-        console.log(data)
     }
 
    
 
     return(
-        <div className="book-modal modal fade" id="editmodal" tabIndex="-1" role="dialog" aria-hidden="true">
+        <div className="book-modal modal fade" id={`editmodal${index.id}`} tabIndex="-1" role="dialog" aria-hidden="true">
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="close-modal" data-bs-dismiss="modal">
@@ -81,7 +75,6 @@ const BookEditModal = (props) =>{
                                 <img className="img-thumbnail  d-block  mx-2" src={editform.image}
                                 alt="..." />
                                 <input type="file" 
-                                // name="image" 
                                 accept='image/png, image/jpeg, image/jpg' className="form-control" name="image"/>
                             </div>
 

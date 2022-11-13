@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import api from "../Api"
 import LoginForm from "../Components/AuthPage/LoginForm"
-import {getCookie, setCookie} from "./Cookies"
 
 const LoginContainer = () =>{
     // 로그인 post /users/login
@@ -28,22 +27,14 @@ const LoginContainer = () =>{
         const data = {id, password}
         api.post('/users/login',data).then(res => {
             // 세션 저장
-            console.log(res)
             if(res.status === 200){
                 
                 const SessionAttrs = {USER_TYPE:"USER", SESSION_ID:id}
                 sessionStorage.setItem("Session_Attrs", JSON.stringify(SessionAttrs))
                 const name="Session_Attrs"
                 
-                setCookie(name,{USER_TYPE:"USER", SESSION_ID:id},{path:'/'})
-                getCookie("Session_Attrs")
-                // api.defaults.Session_Attrs={USER_TYPE:"USER", SESSION_ID:id}
                 console.log("로그인 성공")
                 window.location.href = '/booklist'
-                
-                // window.location.href = '/main'
-                // sessionStorage.setItem("user", res.data)
-                // Session Attrs = {USER_TYPE=USER, SESSION_ID=user2}
                 
             }
         })

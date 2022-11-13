@@ -1,11 +1,11 @@
-import { setCookie } from "../Containers/Cookies"
+
 import "./Styles.css"
 
 const Navigation = (props) =>{
     const user = sessionStorage.getItem("Session_Attrs")
     // 로그아웃 delete /users/logout
     const logout = () =>{
-        setCookie('Session_Attrs','',-1)
+
         sessionStorage.clear()
         window.location.href = '/'
         console.log("로그아웃")
@@ -14,7 +14,8 @@ const Navigation = (props) =>{
     return(
         <div class="navbar navbar-expand-lg  fixed-top">
             <div class="container">
-            <a class="navbar-brand" href="/">Book Site Title</a>
+                {user? <a class="navbar-brand" href="/booklist">Book Site Title</a>:
+                 <a class="navbar-brand" href="/">Book Site Title</a>}
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
